@@ -13,7 +13,6 @@ import './App.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
-  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     // Simulate loading time
@@ -24,24 +23,13 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
-  useEffect(() => {
-    // Apply dark mode to body
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
   if (isLoading) {
     return <LoadingScreen />
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'
-    }`}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className="min-h-screen transition-colors duration-300">
+      <Navbar />
       <main>
         <Hero />
         <About />
