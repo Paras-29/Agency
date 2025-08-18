@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Target, Eye, Users, Award, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react'
+import { Target, Eye, Users, Award, TrendingUp, CheckCircle, ArrowRight,Rocket } from 'lucide-react'
 
 const About = () => {
   const features = [
@@ -30,9 +30,9 @@ const About = () => {
   ]
 
   const achievements = [
-    { number: "500+", label: "Projects Delivered", icon: "🚀", color: "from-blue-500 to-blue-600" },
+    { number: "500+", label: "Projects Delivered", icon: <Rocket/>, color: "from-blue-500 to-blue-600" },
     { number: "98%", label: "Client Satisfaction", icon: "😊", color: "from-green-500 to-green-600" },
-    { number: "5+", label: "Years Experience", icon: "⭐", color: "from-yellow-500 to-yellow-600" },
+    { number: "5+", label: "Years Experience", icon: <TrendingUp/>, color: "from-yellow-500 to-yellow-600" },
     { number: "24/7", label: "Support Available", icon: "🛟", color: "from-purple-500 to-purple-600" }
   ]
 

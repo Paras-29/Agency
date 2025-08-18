@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, CheckCircle, XCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle, XCircle, Instagram, Linkedin } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
@@ -34,11 +34,10 @@ const Contact = () => {
     }
   ]
 
+  // ✅ Only Instagram & LinkedIn kept
   const socialLinks = [
-    { name: "LinkedIn", url: "#", color: "hover:text-blue-600" },
-    { name: "Twitter", url: "#", color: "hover:text-blue-400" },
-    { name: "Facebook", url: "#", color: "hover:text-blue-800" },
-    { name: "Instagram", url: "#", color: "hover:text-pink-600" }
+    { name: "LinkedIn", url: "#", icon: Linkedin, color: "hover:text-blue-600" },
+    { name: "Instagram", url: "#", icon: Instagram, color: "hover:text-pink-600" }
   ]
 
   const handleInputChange = (e) => {
@@ -55,7 +54,6 @@ const Contact = () => {
     setSubmitStatus(null)
 
     try {
-      // Replace with your actual EmailJS service ID, template ID, and public key
       const result = await emailjs.send(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
@@ -85,6 +83,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Title */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -95,7 +94,7 @@ const Contact = () => {
           >
             Contact Us
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +107,7 @@ const Contact = () => {
               {" "}Your Project
             </span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +130,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-8">
               Get in Touch
             </h3>
-            
+
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -153,7 +152,7 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Links */}
+            {/* ✅ Social Links with Icons */}
             <div>
               <h4 className="text-base font-semibold text-gray-900 mb-4">Follow Us</h4>
               <div className="flex space-x-4">
@@ -163,14 +162,14 @@ const Contact = () => {
                     href={social.url}
                     className={`w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 ${social.color} transition-colors duration-300`}
                   >
-                    <span className="text-base font-medium">{social.name.charAt(0)}</span>
+                    <social.icon className="w-5 h-5" />
                   </a>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form (unchanged except for above icons) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -182,7 +181,6 @@ const Contact = () => {
                 Send us a Message
               </h3>
 
-              {/* Status Alert */}
               {submitStatus && (
                 <div className={`mb-6 p-4 rounded-lg flex items-center space-x-3 ${
                   submitStatus === 'success'
@@ -292,28 +290,6 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Map Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-              Our Location
-            </h3>
-            <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-                <p>Interactive map will be displayed here</p>
-                <p className="text-sm">San Francisco, CA</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, ArrowUp, Sparkles, Heart } from 'lucide-react'
+import { Mail, Phone, MapPin, ArrowUp, Instagram , Linkedin } from 'lucide-react'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -38,13 +38,7 @@ const Footer = () => {
     ]
   }
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: '#', icon: 'LI', color: 'hover:text-blue-600' },
-    { name: 'Twitter', href: '#', icon: 'TW', color: 'hover:text-blue-400' },
-    { name: 'Facebook', href: '#', icon: 'FB', color: 'hover:text-blue-800' },
-    { name: 'Instagram', href: '#', icon: 'IG', color: 'hover:text-pink-600' },
-    { name: 'YouTube', href: '#', icon: 'YT', color: 'hover:text-red-600' }
-  ]
+  
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white relative overflow-hidden">
@@ -80,7 +74,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Enhanced Company Info */}
           <div className="lg:col-span-2">
@@ -101,11 +95,11 @@ const Footer = () => {
               </p>
               
               {/* Enhanced Contact Info */}
-              <div className="space-y-4">
+              <div className="gap-2 flex ">
                 {[
-                  { icon: Mail, text: "hello@techvisionpro.com", link: "mailto:hello@techvisionpro.com" },
-                  { icon: Phone, text: "+1 (555) 123-4567", link: "tel:+15551234567" },
-                  { icon: MapPin, text: "San Francisco, CA", link: "#" }
+                  { icon: Instagram, text: "", link: "#" },
+                  { icon: Linkedin, text: "", link: "#" },
+                 
                 ].map((contact, index) => (
                   <motion.div
                     key={index}
@@ -113,7 +107,7 @@ const Footer = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
+                    whileHover={{ y: 10 }}
                     className="flex items-center space-x-3 group"
                   >
                     <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/40 transition-colors duration-300">
@@ -252,32 +246,25 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Enhanced Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16 pt-8 border-t border-gray-700/50"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-6 mb-6 md:mb-0">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className={`w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 ${social.color} transition-all duration-300 border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/80`}
-                >
-                  <span className="text-sm font-bold">{social.icon}</span>
-                </motion.a>
-              ))}
-            </div>
 
+        {/* Enhanced Copyright */}
+       
+
+       
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          viewport={{ once: true }}
+          className="mt-12 pt-8 border-t border-gray-700/50 w-full "
+        >
+          <div className="flex  justify-between">
+          <p className="text-gray-400 text-sm">
+            © 2024 TechVision Pro. All rights reserved.
+          </p>
+          
+         
+          
             {/* Enhanced Scroll to Top Button */}
             <motion.button
               whileHover={{ scale: 1.1, y: -5 }}
@@ -288,30 +275,9 @@ const Footer = () => {
               <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform duration-300" />
             </motion.button>
           </div>
+          
         </motion.div>
-
-        {/* Enhanced Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-gray-700/50 text-center"
-        >
-          <p className="text-gray-400 text-sm">
-            © 2024 TechVision Pro. All rights reserved. Made with{' '}
-            <Heart className="inline w-4 h-4 text-red-500 mx-1" />
-            {' '}for amazing digital experiences.
-          </p>
-          <motion.div
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block mt-2"
-          >
-            <Sparkles className="w-4 h-4 text-yellow-400 inline" />
-          </motion.div>
-        </motion.div>
-      </div>
+         </div>
     </footer>
   )
 }

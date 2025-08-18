@@ -8,8 +8,8 @@ import {
   Search,
   ArrowRight,
   CheckCircle,
-  Sparkles,
-  Zap
+  Zap,
+  ClipboardList, Rocket
 } from 'lucide-react'
 
 const Services = () => {
@@ -70,12 +70,12 @@ const Services = () => {
     }
   ]
 
-  const processSteps = [
-    { step: "01", title: "Discovery", description: "Understanding your needs and objectives", icon: "🔍" },
-    { step: "02", title: "Strategy", description: "Planning the perfect solution for your business", icon: "📋" },
-    { step: "03", title: "Execution", description: "Building and implementing your solution", icon: "⚡" },
-    { step: "04", title: "Launch", description: "Going live with ongoing support", icon: "🚀" }
-  ]
+const processSteps = [
+  { step: "01", title: "Discovery", description: "Understanding your needs and objectives", icon: <Search className="w-10 h-10 text-blue-600" /> },
+  { step: "02", title: "Strategy", description: "Planning the perfect solution for your business", icon: <ClipboardList className="w-10 h-10 text-green-600" /> },
+  { step: "03", title: "Execution", description: "Building and implementing your solution", icon: <Zap className="w-10 h-10 text-yellow-600" /> },
+  { step: "04", title: "Launch", description: "Going live with ongoing support", icon: <Rocket className="w-10 h-10 text-purple-600" /> }
+]
 
   return (
     <section id="services" className="py-24 bg-gradient-to-br from-white via-gray-50 to-indigo-50 relative overflow-hidden">
@@ -239,7 +239,7 @@ const Services = () => {
                 >
                   {process.step}
                 </motion.div>
-                <div className="text-4xl ">{process.icon}</div>
+                <div className="text-4xl place-items-center">{process.icon}</div>
                 <h4 className="text-xl font-black text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {process.title}
                 </h4>

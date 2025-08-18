@@ -199,30 +199,8 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Join Our Success Stories?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Let's work together to create something amazing. Your success is our priority, and we're committed to delivering results that exceed your expectations.
-            </p>
-            <button
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:scale-105"
-            >
-              Start Your Project
-            </button>
-          </div>
-        </motion.div>
+        
+          
       </div>
     </section>
   )
