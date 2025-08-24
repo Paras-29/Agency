@@ -111,52 +111,61 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
+            className="bg-white/90 rounded-2xl p-8 shadow-xl border border-blue-100 max-w-2xl mx-auto"
           >
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-3xl font-black text-gray-900 mt-10 mb-8"
+              className="text-3xl font-extrabold text-blue-700 mb-6 text-center"
             >
               Your Success is Our Priority
             </motion.h3>
-            
-            <div className="space-y-6 text-gray-600">
-              {[
-                "At TechVision Pro, we believe that every business has the potential to thrive in the digital landscape. Our comprehensive approach combines technical expertise with strategic thinking to deliver solutions that not only meet your immediate needs but also position you for long-term success.",
-                "With over 5 years of experience in the industry, we've helped businesses of all sizes transform their digital presence, streamline operations, and achieve remarkable growth. Our team stays ahead of the curve with the latest technologies and industry best practices.",
-                "We don't just build websites or run campaigns – we build partnerships. Your success is our success, and we're committed to going above and beyond to ensure you achieve your goals."
-              ].map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-lg leading-relaxed"
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
+            <div className="space-y-5 text-base text-gray-700 leading-relaxed font-medium">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-blue-50 rounded-lg px-4 py-3 shadow-sm"
+              >
+                We help businesses thrive online with creative strategy and technical expertise.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-indigo-50 rounded-lg px-4 py-3 shadow-sm"
+              >
+                Over 5 years of experience delivering growth and results for all sizes.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-blue-50 rounded-lg px-4 py-3 shadow-sm"
+              >
+                We build partnerships, not just projects. Your goals are our mission.
+              </motion.p>
             </div>
-
-            {/* Enhanced CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
               viewport={{ once: true }}
-              className="mt-8"
+              className="mt-8 flex justify-center"
             >
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 flex items-center"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl flex items-center"
               >
                 Start Your Project
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <span className="ml-2">→</span>
               </motion.button>
             </motion.div>
           </motion.div>

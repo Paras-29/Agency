@@ -79,9 +79,17 @@ const Testimonials = () => {
     setCurrentIndex(index)
   }
 
+  // Show two testimonials per row
+  const getVisibleTestimonials = () => {
+    if (testimonials.length < 2) return [testimonials[0]]
+    if (currentIndex === testimonials.length - 1)
+      return [testimonials[currentIndex], testimonials[0]]
+    return [testimonials[currentIndex], testimonials[currentIndex + 1]]
+  }
+
   return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-14 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -118,7 +126,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
@@ -134,7 +142,7 @@ const Testimonials = () => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Testimonials */}
+          {/* Two Testimonials in a Row */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -142,47 +150,52 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
-              {/* Quote Icon */}
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                <Quote className="w-8 h-8 text-blue-600" />
-              </div>
-
-              {/* Testimonial Content */}
-              <div className="mt-6">
-                <blockquote className="text-center text-lg md:text-xl text-gray-700 leading-relaxed mb-8 italic">
-                  "{testimonials[currentIndex].content}"
-                </blockquote>
-
-                {/* Client Info */}
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-4">
+              {getVisibleTestimonials().map((testimonial, idx) => (
+                <motion.div
+                  key={testimonial.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(59,130,246,0.10)" }}
+                  className="bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-blue-100 flex min-h-[320px] max-h-[340px] transition-all duration-300"
+                >
+                  {/* Left: Image, Name, Info, Rating */}
+                  <div className="flex flex-col items-center justify-center w-1/3 pr-6 border-r border-blue-50">
                     <img
-                      src={testimonials[currentIndex].image}
-                      alt={testimonials[currentIndex].name}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg ring-2 ring-blue-200 mb-3"
                     />
+                    <h4 className="text-base font-bold text-blue-700 mb-1 text-center">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-indigo-500 text-sm mb-1 font-medium text-center">
+                      {testimonial.position}
+                    </p>
+                    <p className="text-xs text-gray-500 mb-2 text-center">
+                      {testimonial.company}
+                    </p>
+                    <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-800 text-xs rounded-full shadow border border-blue-100 gap-1 self-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-base">★</span>
+                      ))}
+                      <span className="ml-1 text-gray-600 font-semibold">{testimonial.rating}/5</span>
+                    </div>
                   </div>
-                  
-                  <h4 className="text-xl font-semibold text-gray-900 mb-1">
-                    {testimonials[currentIndex].name}
-                  </h4>
-                  
-                  <p className="text-gray-600 mb-2">
-                    {testimonials[currentIndex].position}
-                  </p>
-                  
-                  <p className="text-sm text-gray-500">
-                    {testimonials[currentIndex].company}
-                  </p>
-                  
-                  {/* Rating */}
-                  <div className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full mt-3">
-                    ⭐⭐⭐⭐⭐ {testimonials[currentIndex].rating}/5
+                  {/* Right: Quote Icon & Content */}
+                  <div className="flex flex-col justify-center w-2/3 pl-8">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-4 shadow self-center">
+                      <Quote className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <blockquote className="text-left text-base md:text-lg text-gray-700 leading-relaxed italic line-clamp-4">
+                      "{testimonial.content}"
+                    </blockquote>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </motion.div>
           </AnimatePresence>
 
@@ -199,8 +212,6 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
-        
-          
       </div>
     </section>
   )

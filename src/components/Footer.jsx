@@ -95,33 +95,41 @@ const Footer = () => {
               </p>
               
               {/* Enhanced Contact Info */}
-              <div className="gap-2 flex ">
-                {[
-                  { icon: Instagram, text: "", link: "#" },
-                  { icon: Linkedin, text: "", link: "#" },
-                 
-                ].map((contact, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: 10 }}
-                    className="flex items-center space-x-3 group"
-                  >
-                    <div className="w-10 h-10 bg-blue-600/20 rounded-lg flex items-center justify-center group-hover:bg-blue-600/40 transition-colors duration-300">
-                      <contact.icon className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
-                    </div>
-                    <a
-                      href={contact.link}
-                      className="text-gray-300 group-hover:text-white transition-colors duration-300"
-                    >
-                      {contact.text}
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
+              <div className="gap-2 flex">
+  {[
+    { icon: Instagram, text: "", link: "#", color: "red" },   // Instagram -> red
+    { icon: Linkedin, text: "", link: "#", color: "blue" },   // LinkedIn -> blue
+  ].map((contact, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      whileHover={{ y: 10 }}
+      className="flex items-center space-x-3 group"
+    >
+      <div
+        className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors duration-300
+          ${contact.color === "red" ? "bg-red-600/20 group-hover:bg-red-600/40" : "bg-blue-600/20 group-hover:bg-blue-600/40"}
+        `}
+      >
+        <contact.icon
+          className={`w-5 h-5 transition-colors duration-300
+            ${contact.color === "red" ? "text-red-400 group-hover:text-red-300" : "text-blue-400 group-hover:text-blue-300"}
+          `}
+        />
+      </div>
+      <a
+        href={contact.link}
+        className="text-gray-300 group-hover:text-white transition-colors duration-300"
+      >
+        {contact.text}
+      </a>
+    </motion.div>
+  ))}
+</div>
+
             </motion.div>
           </div>
 
