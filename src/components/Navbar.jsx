@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X, Sparkles ,Target} from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -28,7 +28,6 @@ const Navbar = () => {
     { name: 'Services', id: 'services' },
     { name: 'Portfolio', id: 'portfolio' },
     { name: 'Testimonials', id: 'testimonials' },
-    { name: 'Contact', id: 'contact' }
   ]
 
   return (
@@ -114,8 +113,8 @@ const Navbar = () => {
                 className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
               <span className="relative z-10 flex items-center">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get a Quote
+                <Target className="mr-2 w-4 h-4" />
+                Contact
               </span>
             </motion.button>
           </div>
@@ -197,8 +196,8 @@ const Navbar = () => {
                     onClick={() => scrollToSection('contact')}
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
-                    <Sparkles className="w-4 h-4 inline mr-2" />
-                    Get a Quote
+                    <Target className="mr-2 w-4 h-4" />
+                    Contact
                   </motion.button>
                 </div>
               </motion.div>

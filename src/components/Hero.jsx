@@ -125,7 +125,7 @@ const Hero = () => {
               className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:shadow-2xl hover:shadow-blue-500/25 flex items-center shadow-lg"
             >
               <Target className="mr-3 w-5 h-5" />
-              Get a Quote
+              Contact
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </motion.button>
             
