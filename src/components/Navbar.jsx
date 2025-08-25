@@ -50,8 +50,8 @@ const Navbar = () => {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex justify-between items-center h-20">
-          {/* Enhanced Logo */}
+        <div className="flex justify-between items-center h-16 sm:h-20">
+          {/* Enhanced Logo - Responsive sizing */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0 relative group"
@@ -59,21 +59,21 @@ const Navbar = () => {
             <motion.div
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 w-12 h-12 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300"
+              className="absolute inset-0 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300"
             />
-            <h1 className="text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10">
               TechVision Pro
             </h1>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"
+              className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"
             />
           </motion.div>
 
           {/* Enhanced Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-6 lg:space-x-8">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
@@ -82,7 +82,7 @@ const Navbar = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="relative text-gray-700 hover:text-blue-900 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 group"
+                  className="relative text-gray-700 hover:text-blue-900 px-3 sm:px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 group"
                 >
                   {item.name}
                   <motion.div
@@ -107,13 +107,13 @@ const Navbar = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('contact')}
-              className="relative bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 overflow-hidden group"
+              className="relative bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25 overflow-hidden group"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
-              <span className="relative z-10 flex items-center">
-                <Target className="mr-2 w-4 h-4" />
+              <span className="relative z-10 flex items-center text-sm sm:text-base">
+                <Target className="mr-2 w-3 h-3 sm:w-4 sm:h-4" />
                 Contact
               </span>
             </motion.button>
@@ -136,7 +136,7 @@ const Navbar = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="h-7 w-7" />
+                    <X className="h-6 w-6 sm:h-7 sm:w-7" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -146,7 +146,7 @@ const Navbar = () => {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="h-7 w-7" />
+                    <Menu className="h-6 w-6 sm:h-7 sm:w-7" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -168,7 +168,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="px-2 pt-2 pb-3 space-y-1"
+              className="px-4 pt-4 pb-6 space-y-2"
             >
               {navItems.map((item, index) => (
                 <motion.button
@@ -178,7 +178,7 @@ const Navbar = () => {
                   transition={{ delay: 0.2 + index * 0.1 }}
                   whileHover={{ x: 10, backgroundColor: '#f3f4f6' }}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-gray-50"
+                  className="block w-full text-left text-gray-700 hover:text-blue-600 px-4 py-4 rounded-xl text-base font-semibold transition-all duration-300 hover:bg-gray-50"
                 >
                   {item.name}
                 </motion.button>
@@ -194,9 +194,9 @@ const Navbar = () => {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection('contact')}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-base"
                   >
-                    <Target className="mr-2 w-4 h-4" />
+                    <Target className="mr-2 w-4 h-4 inline" />
                     Contact
                   </motion.button>
                 </div>

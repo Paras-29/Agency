@@ -16,7 +16,7 @@ const Hero = () => {
       
       {/* Floating Geometric Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Large floating circles */}
+        {/* Large floating circles - Responsive sizing */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -29,7 +29,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full opacity-20 blur-sm"
+          className="absolute -top-20 sm:-top-40 -right-20 sm:-right-40 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full opacity-20 blur-sm"
         />
         <motion.div
           animate={{
@@ -43,7 +43,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute -bottom-40 -left-40 w-[28rem] h-[28rem] bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full opacity-20 blur-sm"
+          className="absolute -bottom-20 sm:-bottom-40 -left-20 sm:-left-40 w-36 h-36 sm:w-[28rem] sm:h-[28rem] bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full opacity-20 blur-sm"
         />
         
         
@@ -86,12 +86,12 @@ const Hero = () => {
         >
           
 
-          {/* Main Heading with Enhanced Typography */}
+          {/* Main Heading with Enhanced Typography - Responsive text sizes */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight"
           >
             <span className="block">Transforming Ideas Into</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-pulse">
@@ -99,45 +99,45 @@ const Hero = () => {
             </span>
           </motion.h1>
 
-          {/* Enhanced Subtitle */}
+          {/* Enhanced Subtitle - Responsive text sizes */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-10 max-w-4xl mx-auto leading-relaxed font-medium"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-10 max-w-4xl mx-auto leading-relaxed font-medium px-4"
           >
             We specialize in cutting-edge web development, digital marketing, and creative solutions that drive 
             <span className="text-blue-600 font-semibold"> business growth</span> and 
             <span className="text-indigo-600 font-semibold"> digital transformation</span>.
           </motion.p>
 
-          {/* Enhanced CTA Buttons */}
+          {/* Enhanced CTA Buttons - Better mobile layout */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 px-4"
           >
             <motion.button
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToContact}
-              className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:shadow-2xl hover:shadow-blue-500/25 flex items-center shadow-lg"
+              className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:shadow-2xl hover:shadow-blue-500/25 flex items-center shadow-lg w-full sm:w-auto justify-center"
             >
-              <Target className="mr-3 w-5 h-5" />
+              <Target className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
               Contact
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </motion.button>
             
             <motion.button
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
-              className="group border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:shadow-xl flex items-center bg-white/80 backdrop-blur-sm"
+              className="group border-2 border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:shadow-xl flex items-center bg-white/80 backdrop-blur-sm w-full sm:w-auto justify-center"
             >
-              <Play className="mr-3 w-5 h-5" />
+              <Play className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
               View Our Work
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </motion.button>
           </motion.div>
 
@@ -150,14 +150,14 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center"
         >
-          <span className="text-sm text-gray-500 mb-2 font-medium">Scroll Down</span>
+          <span className="text-xs sm:text-sm text-gray-500 mb-2 font-medium">Scroll Down</span>
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <motion.div
               animate={{ y: [0, 12, 0] }}

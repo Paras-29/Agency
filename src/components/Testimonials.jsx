@@ -79,8 +79,11 @@ const Testimonials = () => {
     setCurrentIndex(index)
   }
 
-  // Show two testimonials per row
+  // Show one testimonial on mobile, two on larger screens
   const getVisibleTestimonials = () => {
+    if (window.innerWidth < 768) {
+      return [testimonials[currentIndex]]
+    }
     if (testimonials.length < 2) return [testimonials[0]]
     if (currentIndex === testimonials.length - 1)
       return [testimonials[currentIndex], testimonials[0]]
@@ -88,15 +91,15 @@ const Testimonials = () => {
   }
 
   return (
-    <section id="testimonials" className="py-14 bg-white">
+    <section id="testimonials" className="py-12 sm:py-14 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
           >
             Testimonials
           </motion.div>
@@ -106,7 +109,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
           >
             What Our
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
@@ -119,30 +122,30 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
           >
             Don't just take our word for it. Here's what our clients have to say about their experience working with us.
           </motion.p>
         </div>
 
-        {/* Testimonials Carousel */}
+        {/* Testimonials Carousel - Responsive layout */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Responsive positioning */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
+            className="absolute left-0 sm:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
+            className="absolute right-0 sm:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* Two Testimonials in a Row */}
+          {/* Testimonials - Responsive grid */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -150,7 +153,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
             >
               {getVisibleTestimonials().map((testimonial, idx) => (
                 <motion.div
@@ -160,37 +163,37 @@ const Testimonials = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(59,130,246,0.10)" }}
-                  className="bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 shadow-xl border border-blue-100 flex min-h-[320px] max-h-[340px] transition-all duration-300"
+                  className="bg-white/90 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 flex flex-col sm:flex-row min-h-[280px] sm:min-h-[320px] max-h-[400px] transition-all duration-300"
                 >
                   {/* Left: Image, Name, Info, Rating */}
-                  <div className="flex flex-col items-center justify-center w-1/3 pr-6 border-r border-blue-50">
+                  <div className="flex flex-col items-center justify-center w-full sm:w-1/3 pr-0 sm:pr-6 border-b sm:border-b-0 sm:border-r border-blue-50 pb-4 sm:pb-0 mb-4 sm:mb-0">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg ring-2 ring-blue-200 mb-3"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-white shadow-lg ring-2 ring-blue-200 mb-3"
                     />
-                    <h4 className="text-base font-bold text-blue-700 mb-1 text-center">
+                    <h4 className="text-sm sm:text-base font-bold text-blue-700 mb-1 text-center">
                       {testimonial.name}
                     </h4>
-                    <p className="text-indigo-500 text-sm mb-1 font-medium text-center">
+                    <p className="text-indigo-500 text-xs sm:text-sm mb-1 font-medium text-center">
                       {testimonial.position}
                     </p>
                     <p className="text-xs text-gray-500 mb-2 text-center">
                       {testimonial.company}
                     </p>
-                    <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-800 text-xs rounded-full shadow border border-blue-100 gap-1 self-center">
+                    <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-800 text-xs rounded-full shadow border border-blue-100 gap-1 self-center">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-base">★</span>
+                        <span key={i} className="text-yellow-400 text-sm sm:text-base">★</span>
                       ))}
-                      <span className="ml-1 text-gray-600 font-semibold">{testimonial.rating}/5</span>
+                      <span className="ml-1 text-gray-600 font-semibold text-xs sm:text-sm">{testimonial.rating}/5</span>
                     </div>
                   </div>
                   {/* Right: Quote Icon & Content */}
-                  <div className="flex flex-col justify-center w-2/3 pl-8">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-4 shadow self-center">
-                      <Quote className="w-6 h-6 text-blue-600" />
+                  <div className="flex flex-col justify-center w-full sm:w-2/3 pl-0 sm:pl-8">
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mb-3 sm:mb-4 shadow self-center sm:self-start">
+                      <Quote className="w-4 h-4 sm:w-6 sm:h-6 text-blue-600" />
                     </div>
-                    <blockquote className="text-left text-base md:text-lg text-gray-700 leading-relaxed italic line-clamp-4">
+                    <blockquote className="text-left text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed italic line-clamp-4 sm:line-clamp-5">
                       "{testimonial.content}"
                     </blockquote>
                   </div>
@@ -200,13 +203,13 @@ const Testimonials = () => {
           </AnimatePresence>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-blue-600 w-8' : 'bg-gray-300'
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'bg-blue-600 w-6 sm:w-8' : 'bg-gray-300'
                 }`}
               />
             ))}

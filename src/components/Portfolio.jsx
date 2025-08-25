@@ -82,15 +82,15 @@ const Portfolio = () => {
     : projects.filter(project => project.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
           >
             Our Portfolio
           </motion.div>
@@ -100,7 +100,7 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
           >
             Showcasing Our
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
@@ -113,19 +113,19 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
           >
             Explore our diverse portfolio of successful projects across web development, digital marketing, and creative services.
           </motion.p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Category Filter - Responsive layout */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm sm:text-base ${
                 selectedCategory === category.id
                   ? 'bg-blue-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -136,8 +136,8 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid - Responsive layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -152,23 +152,23 @@ const Portfolio = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3 sm:space-x-4">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
                   >
-                    <Eye className="w-5 h-5" />
+                    <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
                     >
-                      <ExternalLink className="w-5 h-5" />
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                     </a>
                   )}
                   {project.githubUrl && (
@@ -176,30 +176,30 @@ const Portfolio = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
                     >
-                      <Github className="w-5 h-5" />
+                      <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                     </a>
                   )}
                 </div>
               </div>
 
               {/* Project Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+                      className="px-2 sm:px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
                     >
                       {tech}
                     </span>
@@ -207,7 +207,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                <span className="inline-block px-2 sm:px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
                   {categories.find(cat => cat.id === project.category)?.name}
                 </span>
               </div>
@@ -215,7 +215,7 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Project Modal */}
+        {/* Project Modal - Responsive */}
         <AnimatePresence>
           {selectedProject && (
             <motion.div
@@ -233,36 +233,36 @@ const Portfolio = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                     {selectedProject.title}
                   </h3>
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="text-gray-500 hover:text-gray-700 transition-colors duration-300"
+                    className="text-gray-500 hover:text-gray-700 transition-colors duration-300 p-2"
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </div>
 
                 {/* Modal Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-64 object-cover rounded-lg mb-6"
+                    className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4 sm:mb-6"
                   />
                   
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
                     {selectedProject.description}
                   </p>
 
-                  <h4 className="font-semibold text-gray-900 mb-2">Technologies Used:</h4>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Technologies Used:</h4>
+                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                     {selectedProject.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                        className="px-2 sm:px-3 py-1 bg-blue-100 text-blue-800 text-xs sm:text-sm rounded-full"
                       >
                         {tech}
                       </span>
@@ -270,13 +270,13 @@ const Portfolio = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     {selectedProject.liveUrl && (
                       <a
                         href={selectedProject.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-300"
+                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium text-center transition-colors duration-300 text-sm sm:text-base"
                       >
                         View Live
                       </a>
@@ -286,7 +286,7 @@ const Portfolio = () => {
                         href={selectedProject.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-300"
+                        className="flex-1 bg-gray-800 hover:bg-gray-900 text-white px-4 sm:px-6 py-3 rounded-lg font-medium text-center transition-colors duration-300 text-sm sm:text-base"
                       >
                         View Code
                       </a>
