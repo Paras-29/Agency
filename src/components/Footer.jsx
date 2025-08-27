@@ -95,8 +95,8 @@ const Footer = () => {
               {/* Enhanced Contact Info */}
               <div className="gap-2 flex">
   {[
-    { icon: Instagram, text: "", link: "#", color: "red" },   // Instagram -> red
-    { icon: Linkedin, text: "", link: "#", color: "blue" },   // LinkedIn -> blue
+    { icon: Instagram, link: "#", color: "red" },   // Instagram -> red
+    { icon: Linkedin, link: "#", color: "blue" },   // LinkedIn -> blue
   ].map((contact, index) => (
     <motion.div
       key={index}
@@ -105,9 +105,10 @@ const Footer = () => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
       whileHover={{ y: 10 }}
-      className="flex items-center space-x-3 group"
+      className="flex items-center space-x-0 group"
     >
-      <div
+      <a href={contact.link} target="_blank" rel="noopener noreferrer">
+<div
         className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors duration-300
           ${contact.color === "red" ? "bg-red-600/20 group-hover:bg-red-600/40" : "bg-blue-600/20 group-hover:bg-blue-600/40"}
         `}
@@ -116,14 +117,12 @@ const Footer = () => {
           className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300
             ${contact.color === "red" ? "text-red-400 group-hover:text-red-300" : "text-blue-400 group-hover:text-blue-300"}
           `}
+          
         />
       </div>
-      <a
-        href={contact.link}
-        className="text-gray-300 group-hover:text-white transition-colors duration-300"
-      >
-        {contact.text}
       </a>
+      
+     
     </motion.div>
   ))}
 </div>
@@ -139,7 +138,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Services</h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-0 sm:space-y-2">
               {footerLinks.services.map((link, index) => (
                 <motion.li
                   key={index}
@@ -169,7 +168,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Company</h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-0 sm:space-y-2">
               {footerLinks.company.map((link, index) => (
                 <motion.li
                   key={index}
@@ -199,7 +198,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Support</h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-0 sm:space-y-2">
               {footerLinks.support.map((link, index) => (
                 <motion.li
                   key={index}
@@ -229,7 +228,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Legal</h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-0 sm:space-y-3">
               {footerLinks.legal.map((link, index) => (
                 <motion.li
                   key={index}

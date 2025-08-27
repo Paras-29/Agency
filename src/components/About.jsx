@@ -29,13 +29,6 @@ const About = () => {
     }
   ]
 
-  const achievements = [
-    { number: "500+", label: "Projects Delivered", icon: <Rocket/>, color: "from-blue-500 to-blue-600" },
-    { number: "98%", label: "Client Satisfaction", icon: "😊", color: "from-green-500 to-green-600" },
-    { number: "5+", label: "Years Experience", icon: <TrendingUp/>, color: "from-yellow-500 to-yellow-600" },
-    { number: "24/7", label: "Support Available", icon: "🛟", color: "from-purple-500 to-purple-600" }
-  ]
-
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-26 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -170,70 +163,29 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Enhanced Stats Grid - Responsive layout */}
+          {/* Right Side - Beautiful Founder Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative order-1 lg:order-2"
+            className="flex flex-col items-center justify-center order-1 lg:order-2 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl shadow-2xl p-8 sm:p-12 border border-blue-200"
           >
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-                >
-                  {/* Background gradient on hover */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-r ${achievement.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                  />
-                  
-                  <div className="relative z-10">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${achievement.color} rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                      <span className="text-xl sm:text-3xl">{achievement.icon}</span>
-                    </div>
-                    <div className="text-2xl sm:text-3xl font-black text-gray-900 mb-1 sm:mb-2 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                      {achievement.number}
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-600 font-medium">
-                      {achievement.label}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative">
+              <img
+                src='./photo.jpeg'
+                alt="Founder"
+                className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-blue-300"
+              />
+              <span className="absolute bottom-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                Founder
+              </span>
             </div>
-
-            {/* Floating elements */}
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-                rotate: [0, 5, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute -top-4 -right-4 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full opacity-80"
-            />
-            <motion.div
-              animate={{
-                y: [0, 15, 0],
-                rotate: [0, -5, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute -bottom-4 -left-4 w-4 h-4 sm:w-6 sm:h-6 bg-green-400 rounded-full opacity-80"
-            />
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-700 mt-6 mb-2 drop-shadow-lg">Paras Gulvanshi</h3>
+            <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">Founder & CEO</p>
+            <blockquote className="italic text-indigo-600 text-center max-w-md">
+              "Empowering businesses to achieve more through innovation and passion."
+            </blockquote>
           </motion.div>
         </div>
 
