@@ -173,7 +173,7 @@ const About = () => {
           >
             <div className="relative">
               <img
-                src='./photo.jpeg'
+                src='./ch.png'
                 alt="Founder"
                 className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-blue-300"
               />
@@ -181,7 +181,7 @@ const About = () => {
                 Founder
               </span>
             </div>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-700 mt-6 mb-2 drop-shadow-lg">Paras Gulvanshi</h3>
+            <h3 className="text-3xl sm:text-4xl font-extrabold text-blue-700 mt-6 mb-2 drop-shadow-lg">Chetan Upadhyay</h3>
             <p className="text-base sm:text-lg text-gray-600 font-medium mb-4">Founder & CEO</p>
             <blockquote className="italic text-indigo-600 text-center max-w-md">
               "Empowering businesses to achieve more through innovation and passion."
