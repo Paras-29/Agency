@@ -17,19 +17,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "info@techvisionpro.com",
-      link: "mailto:info@techvisionpro.com"
+      value: "agency2922@gmail.com",
+      link: "mailto:agency2922@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+919460224643",
+      link: "tel:+919460224643"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "jaipur, India",
       link: "#"
     }
   ]
@@ -55,15 +55,15 @@ const Contact = () => {
 
     try {
       const result = await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_sj5kl09',
+        'template_29x1yn9',
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY'
+        'uflT10rRh_fLXmJfj'
       )
 
       if (result.status === 200) {

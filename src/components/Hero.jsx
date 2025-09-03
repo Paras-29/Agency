@@ -17,10 +17,10 @@ const Hero = () => {
   ]
 
   return (
-    <section className='relative pb-10'>
+    <section id="home" className='relative pb-10'>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
 
-    <div id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div  className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Background with Multiple Layers */}
       
       

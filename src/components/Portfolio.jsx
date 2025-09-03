@@ -47,16 +47,43 @@ const Portfolio = () => {
     },
     {
       id: 4,
-      title: "Product Demo Video",
+      title: "Space Chimes Edits",
       category: "video",
-      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop",
+      image: "./images/sc.jpeg",
       description: "Professional product demonstration video for marketing and promotional purposes.",
       technologies: ["Adobe Premiere", "After Effects", "Motion Graphics"],
-      liveUrl: "#",
+      liveUrl: "https://justchetan.myportfolio.com/rapper-edits",
+    },
+     {
+      id: 5,
+      title: "Artistic Edits",
+      category: "video",
+      image: "./images/art.jpeg",
+      description: "Professional product demonstration video for marketing and promotional purposes.",
+      technologies: ["Adobe Premiere", "After Effects", "Motion Graphics"],
+      liveUrl: "https://justchetan.myportfolio.com/artists-edits",
+    },
+    {
+      id: 6,
+      title: "Cinamatics ",
+      category: "video",
+      image: "./images/cin.jpg",
+      description: "Professional product demonstration video for marketing and promotional purposes.",
+      technologies: ["Adobe Premiere", "After Effects", "Motion Graphics"],
+      liveUrl: "https://justchetan.myportfolio.com/cinematic",
+    },
+     {
+      id: 7,
+      title: "Travel Edits",
+      category: "video",
+      image: "./images/tra.jpg",
+      description: "Professional product demonstration video for marketing and promotional purposes.",
+      technologies: ["Adobe Premiere", "After Effects", "Motion Graphics"],
+      liveUrl: "https://justchetan.myportfolio.com/travel-projects",
       githubUrl: "#"
     },
     {
-      id: 5,
+      id: 8,
       title: "Mobile App",
       category: "web",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
@@ -66,7 +93,7 @@ const Portfolio = () => {
       githubUrl: "#"
     },
     {
-      id: 6,
+      id: 9,
       title: "SEO Optimization",
       category: "marketing",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
@@ -171,16 +198,16 @@ const Portfolio = () => {
                       <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                     </a>
                   )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                    >
-                      <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </a>
-                  )}
+                  {project.githubUrl && project.category !== "video" && (
+  <a
+    href={project.githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-gray-700 hover:text-blue-600 transition-colors duration-300"
+  >
+    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+  </a>
+)}
                 </div>
               </div>
 
