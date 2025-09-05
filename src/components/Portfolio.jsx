@@ -17,34 +17,25 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Colours Product Website",
       category: "web",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      description: "A modern e-commerce platform built with React and Node.js, featuring user authentication, product management, and payment integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#"
+      image: "./images/ec.png",
+      description: "A modern Colours Product Selling platform built with React and ThreeJS, featuring user friendly interfaces to showcase the company colours and other product.",
+      technologies: ["React", "ThreeJS", "Tailwind CSS", "TypeScript"],
+      liveUrl: "https://arvind-and-com.vercel.app/",
+      githubUrl: "https://github.com/Paras-29/Arvind_and_com"
     },
     {
       id: 2,
-      title: "Corporate Website",
-      category: "wordpress",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      description: "A professional corporate website built with WordPress, featuring custom themes and responsive design.",
-      technologies: ["WordPress", "PHP", "CSS3", "JavaScript"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Tours & Travels Website",
+      category: "web",
+      image: "./images/tt.png",
+      description: "A professional Tours and Travles website built with Mern Stack with feature of AI trip planning with responsive design.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      liveUrl: "https://adventure-nine-blond.vercel.app/",
+      githubUrl: "https://github.com/Paras-29/adventure"
     },
-    {
-      id: 3,
-      title: "Marketing Campaign",
-      category: "marketing",
-      image: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=500&h=300&fit=crop",
-      description: "Comprehensive digital marketing campaign including social media, PPC, and content marketing strategies.",
-      technologies: ["Google Ads", "Facebook Ads", "Analytics", "SEO"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
+   
     {
       id: 4,
       title: "Space Chimes Edits",
@@ -77,31 +68,12 @@ const Portfolio = () => {
       title: "Travel Edits",
       category: "video",
       image: "./images/tra.jpg",
-      description: "Professional product demonstration video for marketing and promotional purposes.",
+      description: "Professional Travel sites demonstration video for marketing and promotional purposes.",
       technologies: ["Adobe Premiere", "After Effects", "Motion Graphics"],
       liveUrl: "https://justchetan.myportfolio.com/travel-projects",
-      githubUrl: "#"
     },
-    {
-      id: 8,
-      title: "Mobile App",
-      category: "web",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&h=300&fit=crop",
-      description: "Cross-platform mobile application built with React Native for iOS and Android.",
-      technologies: ["React Native", "TypeScript", "Redux", "Firebase"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 9,
-      title: "SEO Optimization",
-      category: "marketing",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      description: "Comprehensive SEO optimization project improving search rankings and organic traffic.",
-      technologies: ["Technical SEO", "Content Strategy", "Link Building", "Analytics"],
-      liveUrl: "#",
-      githubUrl: "#"
-    }
+   
+   
   ]
 
   const filteredProjects = selectedCategory === 'all' 
