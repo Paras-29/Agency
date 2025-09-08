@@ -17,6 +17,16 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: "Hostro Website",
+      category: "web",
+      image: "./images/hos.png",
+      description: "Hostro is a complete PG ecosystem platform designed for students, PG owners, vendors, CAs, admins, and super admins. ",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS","Framer Motion"],
+      liveUrl: "https://hostro-static.vercel.app/",
+      githubUrl: "https://github.com/Paras-29/hostro_static"
+    },
+    {
+      id: 2,
       title: "Colours Product Website",
       category: "web",
       image: "./images/ec.png",
@@ -26,7 +36,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/Paras-29/Arvind_and_com"
     },
     {
-      id: 2,
+      id: 3,
       title: "Tours & Travels Website",
       category: "web",
       image: "./images/tt.png",

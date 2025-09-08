@@ -9,7 +9,8 @@ import {
   ArrowRight,
   CheckCircle,
   Zap,
-  ClipboardList, Rocket
+  ClipboardList, Rocket,
+  Palette
 } from 'lucide-react'
 
 const Services = () => {
@@ -67,6 +68,15 @@ const Services = () => {
       color: "from-indigo-500 to-indigo-600",
       gradient: "from-indigo-500 to-indigo-600",
       iconColor: "text-indigo-600"
+    },
+     {
+      icon: Palette,
+      title: "Graphic Designing",
+      description: "Creative graphic design solutions for branding, marketing, and digital assets. Stand out with stunning visuals.",
+      features: ["Logo Design", "Brand Identity", "Social Media Graphics", "Print Materials"],
+      color: "from-pink-500 to-pink-600",
+      gradient: "from-pink-500 to-pink-600",
+      iconColor: "text-pink-600"
     }
   ]
 
