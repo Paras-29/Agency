@@ -39,38 +39,8 @@ const Footer = () => {
   
 
   return (
-    <footer className="bg-gradient-to-br from-gray-600 via-black to-gray-600 text-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -top-20 -right-20 w-32 h-32 sm:w-40 sm:h-40 bg-blue-800/20 rounded-full blur-xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -bottom-20 -left-20 w-24 h-24 sm:w-32 sm:h-32 bg-indigo-800/20 rounded-full blur-xl"
-        />
-      </div>
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
-
+    <footer className="bg-gradient-to-br from-gray-800 via-black to-gray-800 text-white relative overflow-hidden">
+      
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-12">
@@ -86,7 +56,7 @@ const Footer = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-4 sm:mb-6"
               >
-                TechVision Pro
+                Tekzyy
               </motion.h3>
               <p className="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-lg">
                 Transforming businesses through innovative digital solutions. We specialize in web development, digital marketing, and creative services that drive growth and success.

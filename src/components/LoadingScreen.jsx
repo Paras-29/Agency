@@ -75,7 +75,7 @@ const LoadingScreen = () => {
             }}
             className="text-5xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-[length:200%_200%] bg-clip-text text-transparent"
           >
-            TechVision Pro
+            Tekzyy
           </motion.h1>
         </motion.div>
 

@@ -99,34 +99,8 @@ const processSteps = [
 ]
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-600 via-black to-gray-600 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -top-20 -left-20 w-32 h-32 sm:w-40 sm:h-40 bg-blue-200 rounded-full opacity-20 blur-xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute -bottom-20 -right-20 w-24 h-24 sm:w-32 sm:h-32 bg-indigo-300 rounded-full opacity-20 blur-xl"
-        />
-      </div>
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-800 via-black to-gray-800 relative overflow-hidden">
+      
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
