@@ -30,7 +30,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-26 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 lg:py-26 bg-gradient-to-br from-gray-600 via-black to-gray-600 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -77,7 +77,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-8 leading-tight px-4"
           >
             We're More Than Just a
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
@@ -90,7 +90,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-4"
+            className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-medium px-4"
           >
             We're a team of passionate innovators, creative thinkers, and technical experts dedicated to transforming businesses through cutting-edge digital solutions.
           </motion.p>
@@ -104,7 +104,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="bg-white/90 rounded-2xl p-6 sm:p-8 shadow-xl border border-blue-100 max-w-2xl mx-auto order-2 lg:order-1"
+            className="bg-gray-300 rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100 max-w-2xl mx-auto order-2 lg:order-1"
           >
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-blue-50 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
+                className="bg-gray-200 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
               >
                 We help businesses thrive online with creative strategy and technical expertise.
               </motion.p>
@@ -130,7 +130,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-indigo-50 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
+                className="bg-gray-200 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
               >
                 Over 5 years of experience delivering growth and results for all sizes.
               </motion.p>
@@ -139,7 +139,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-blue-50 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
+                className="bg-gray-200 rounded-lg px-3 sm:px-4 py-3 shadow-sm"
               >
                 We build partnerships, not just projects. Your goals are our mission.
               </motion.p>
@@ -169,11 +169,11 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="flex flex-col items-center justify-center order-1 lg:order-2 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl shadow-2xl p-8 sm:p-12 border border-blue-200"
+            className="flex flex-col items-center justify-center order-1 lg:order-2 bg-gray-300 rounded-3xl shadow-2xl p-8 sm:p-12 border border-blue-200"
           >
             <div className="relative">
               <img
-                src='./ch.png'
+                src='./chc.jpg'
                 alt="Founder"
                 className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-full shadow-xl border-4 border-blue-300"
               />
@@ -199,7 +199,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="text-center p-6 sm:p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group"
+              className="text-center p-6 sm:p-8 bg-gray-300 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden group"
             >
               {/* Background gradient on hover */}
               <motion.div

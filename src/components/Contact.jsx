@@ -81,7 +81,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-gray-50">
+    <section id="contact" className="py-16 sm:py-20 bg-gradient-to-l from-black via-gray-700 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12 sm:mb-16">
@@ -100,7 +100,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 px-4"
           >
             Let's Start
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
@@ -113,7 +113,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4"
+            className="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto px-4"
           >
             Ready to transform your business? Get in touch with us today and let's discuss how we can help you achieve your digital goals.
           </motion.p>
@@ -128,7 +128,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-6 sm:mb-8">
+            <h3 className="text-lg sm:text-xl font-bold text-blue-500 mb-6 sm:mb-8">
               Get in Touch
             </h3>
 
@@ -178,7 +178,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
+            <div className="bg-gray-300 rounded-2xl p-6 sm:p-8 shadow-lg">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Send us a Message
               </h3>

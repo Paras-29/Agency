@@ -39,7 +39,7 @@ const Footer = () => {
   
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-600 via-black to-gray-600 text-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

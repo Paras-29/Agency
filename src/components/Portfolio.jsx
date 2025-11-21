@@ -25,8 +25,18 @@ const Portfolio = () => {
       liveUrl: "https://hostro-static.vercel.app/",
       githubUrl: "https://github.com/Paras-29/hostro_static"
     },
-    {
+     {
       id: 2,
+      title: "Real Estate Website",
+      category: "web",
+      image: "./images/real.png",
+      description: "Full-featured real estate marketplace connecting buyers, sellers, and agents. It offers interactive property listings with virtual tours, advanced search filters.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS","Framer Motion"],
+      liveUrl: "https://real-estate-ten-peach-42.vercel.app/",
+      githubUrl: "https://github.com/Paras-29/hostro_static"
+    },
+    {
+      id: 3,
       title: "Colours Product Website",
       category: "web",
       image: "./images/ec.png",
@@ -36,7 +46,7 @@ const Portfolio = () => {
       githubUrl: "https://github.com/Paras-29/Arvind_and_com"
     },
     {
-      id: 3,
+      id: 4,
       title: "Tours & Travels Website",
       category: "web",
       image: "./images/tt.png",
@@ -47,7 +57,7 @@ const Portfolio = () => {
     },
    
     {
-      id: 4,
+      id: 5,
       title: "Space Chimes Edits",
       category: "video",
       image: "./images/sc.jpeg",
@@ -56,7 +66,7 @@ const Portfolio = () => {
       liveUrl: "https://justchetan.myportfolio.com/rapper-edits",
     },
      {
-      id: 5,
+      id: 6,
       title: "Artistic Edits",
       category: "video",
       image: "./images/art.jpeg",
@@ -65,7 +75,7 @@ const Portfolio = () => {
       liveUrl: "https://justchetan.myportfolio.com/artists-edits",
     },
     {
-      id: 6,
+      id: 7,
       title: "Cinamatics ",
       category: "video",
       image: "./images/cin.jpg",
@@ -74,7 +84,7 @@ const Portfolio = () => {
       liveUrl: "https://justchetan.myportfolio.com/cinematic",
     },
      {
-      id: 7,
+      id: 8,
       title: "Travel Edits",
       category: "video",
       image: "./images/tra.jpg",
@@ -91,7 +101,7 @@ const Portfolio = () => {
     : projects.filter(project => project.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20 bg-gray-50">
+    <section id="portfolio" className="py-16 sm:py-20 bg-gradient-to-l from-black via-gray-700 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <motion.div
@@ -109,7 +119,7 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4"
           >
             Showcasing Our
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
@@ -122,7 +132,7 @@ const Portfolio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
+            className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto px-4"
           >
             Explore our diverse portfolio of successful projects across web development, digital marketing, and creative services.
           </motion.p>
@@ -154,14 +164,14 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group relative bg-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-40  sm:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3 sm:space-x-4">
                   <button

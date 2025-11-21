@@ -18,15 +18,15 @@ const Hero = () => {
 
   return (
     <section id="home" className='relative pb-10'>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-600 via-black to-gray-600 " />
 
     <div  className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Background with Multiple Layers */}
       
       
       {/* Floating Geometric Shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Large floating circles - Responsive sizing */}
+      {/* <div className="absolute inset-0 overflow-hidden">
+        
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -81,7 +81,7 @@ const Hero = () => {
           }}
           className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-green-400 rounded-full opacity-60"
         />
-      </div>
+      </div> */}
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
@@ -101,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 leading-tight"
           >
             <span className="block">Transforming Ideas Into</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 animate-pulse">
@@ -114,7 +114,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-10 max-w-4xl mx-auto leading-relaxed font-medium px-4"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 mb-6 sm:mb-10 max-w-4xl mx-auto leading-relaxed font-medium px-4"
           >
             We specialize in cutting-edge web development, digital marketing, and creative solutions that drive 
             <span className="text-blue-600 font-semibold"> business growth</span> and 

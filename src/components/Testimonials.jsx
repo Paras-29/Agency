@@ -91,7 +91,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section id="testimonials" className="py-12 sm:py-14 bg-white">
+    <section id="testimonials" className="py-12 sm:py-14 bg-gradient-to-l from-black via-gray-700 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
         <div className="text-center mb-12 sm:mb-16">
           <motion.div
@@ -109,7 +109,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4"
           >
             What Our
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
@@ -122,7 +122,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
+            className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto px-4"
           >
             Don't just take our word for it. Here's what our clients have to say about their experience working with us.
           </motion.p>
@@ -133,14 +133,14 @@ const Testimonials = () => {
           {/* Navigation Buttons - Responsive positioning */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 sm:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
+            className="absolute left-0 sm:-left-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-gray-300 rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 sm:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
+            className="absolute right-0 sm:-right-12 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-gray-300 rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-blue-600 transition-colors duration-300 border border-gray-200"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
@@ -163,7 +163,7 @@ const Testimonials = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(59,130,246,0.10)" }}
-                  className="bg-white/90 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 flex flex-col sm:flex-row min-h-[280px] sm:min-h-[320px] max-h-[400px] transition-all duration-300"
+                  className="bg-gray-400 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 flex flex-col sm:flex-row min-h-[280px] sm:min-h-[320px] max-h-[400px] transition-all duration-300"
                 >
                   {/* Left: Image, Name, Info, Rating */}
                   <div className="flex flex-col items-center justify-center w-full sm:w-1/3 pr-0 sm:pr-6 border-b sm:border-b-0 sm:border-r border-blue-50 pb-4 sm:pb-0 mb-4 sm:mb-0">

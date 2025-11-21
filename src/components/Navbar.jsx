@@ -36,7 +36,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-xl shadow-2xl border-b border-gray-200/50' 
+          ? 'bg-white/80 backdrop-blur-xl shadow-2xl border-b border-none' 
           : 'bg-transparent'
       }`}
     >
@@ -45,7 +45,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-white/80 to-indigo-50/50"
+          className="absolute inset-0 bg-gray-800 text-black cursor-pointer border-none"
         />
       )}
 
@@ -61,8 +61,8 @@ const Navbar = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute inset-0 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300"
             />
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent relative z-10">
-              TechVision Pro
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-orange-500 via-gray-300 to-orange-500 bg-clip-text text-transparent relative z-10">
+              Tekzyy
             </h1>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
@@ -82,7 +82,7 @@ const Navbar = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="relative text-gray-700 hover:text-blue-900 px-3 sm:px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 group"
+                  className="relative text-white hover:text-blue-300 px-3 sm:px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 group"
                 >
                   {item.name}
                   <motion.div

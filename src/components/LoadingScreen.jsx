@@ -16,7 +16,7 @@ const LoadingScreen = () => {
             y: [0, -50, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -30,7 +30,7 @@ const LoadingScreen = () => {
             y: [0, 60, 0],
           }}
           transition={{
-            duration: 10,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -44,7 +44,7 @@ const LoadingScreen = () => {
             y: [0, 40, 0],
           }}
           transition={{
-            duration: 12,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -69,7 +69,7 @@ const LoadingScreen = () => {
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
             transition={{
-              duration: 3,
+              duration: 1,
               repeat: Infinity,
               ease: "linear"
             }}
@@ -153,7 +153,7 @@ const LoadingScreen = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          transition={{ duration: 0.4, delay: 1 }}
           className="mt-16 max-w-md mx-auto"
         >
           <div className="bg-white/50 backdrop-blur-sm rounded-full h-2 border border-gray-200/50 overflow-hidden">
@@ -169,7 +169,7 @@ const LoadingScreen = () => {
         {/* Sparkles effect */}
         <motion.div
           animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 pointer-events-none"
         >
           {[...Array(8)].map((_, i) => (
@@ -180,8 +180,8 @@ const LoadingScreen = () => {
                 scale: [0, 1, 0],
               }}
               transition={{
-                duration: 2,
-                delay: i * 0.25,
+                duration: 1,
+                delay: i * 0.20,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}

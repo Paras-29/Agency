@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 import './App.css'
 
+import CustomCursor from './components/CustomCursor'
+
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -29,6 +31,7 @@ function App() {
 
   return (
     <div className="min-h-screen transition-colors duration-300">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />

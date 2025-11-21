@@ -10,7 +10,9 @@ import {
   CheckCircle,
   Zap,
   ClipboardList, Rocket,
-  Palette
+  Palette,
+
+  
 } from 'lucide-react'
 
 const Services = () => {
@@ -32,6 +34,15 @@ const Services = () => {
       color: "from-green-500 to-green-600",
       gradient: "from-green-500 to-green-600",
       iconColor: "text-green-600"
+    },
+      {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Intuitive and engaging UI/UX designs that enhance user experience and drive conversions.",
+      features: [ "User Research", "Wireframing & Prototyping", "Visual Design", "Usability Testing"],
+      color: "from-zinc-500 to-zinc-600",
+      gradient: "from-zinc-500 to-zinc-600",
+      iconColor: "text-zinc-600"
     },
     {
       icon: TrendingUp,
@@ -88,7 +99,7 @@ const processSteps = [
 ]
 
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50 to-indigo-50 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-600 via-black to-gray-600 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -135,7 +146,7 @@ const processSteps = [
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 leading-tight px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 sm:mb-8 leading-tight px-4"
           >
             Comprehensive
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
@@ -148,7 +159,7 @@ const processSteps = [
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-4"
+            className="text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-medium px-4"
           >
             From concept to execution, we provide end-to-end digital services that help businesses thrive in the digital landscape.
           </motion.p>
@@ -166,7 +177,7 @@ const processSteps = [
               whileHover={{ scale: 1.02, y: -10 }}
               className="group relative"
             >
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+              <div className="bg-gray-300 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
                 {/* Background gradient on hover */}
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
