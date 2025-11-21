@@ -5,7 +5,7 @@ const LoadingScreen = () => {
   const icons = [Code, Globe, TrendingUp, Video, PenTool, Search]
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center z-50 overflow-hidden">
+    <div className="fixed inset-0 bg-gradient-to-br from-gray-600 via-black to-gray-600 flex items-center justify-center z-50 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
