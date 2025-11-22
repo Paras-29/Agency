@@ -163,7 +163,7 @@ const Testimonials = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                   whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(59,130,246,0.10)" }}
-                  className="bg-gray-400 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 flex flex-col sm:flex-row min-h-[280px] sm:min-h-[320px] max-h-[400px] transition-all duration-300"
+                  className="bg-gray-300 backdrop-blur-lg rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-blue-100 flex flex-col sm:flex-row min-h-[280px] sm:min-h-[320px] max-h-[400px] transition-all duration-300"
                 >
                   {/* Left: Image, Name, Info, Rating */}
                   <div className="flex flex-col items-center justify-center w-full sm:w-1/3 pr-0 sm:pr-6 border-b sm:border-b-0 sm:border-r border-blue-50 pb-4 sm:pb-0 mb-4 sm:mb-0">

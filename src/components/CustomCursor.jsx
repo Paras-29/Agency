@@ -42,9 +42,9 @@ const CustomCursor = () => {
           position: "fixed",
           top: 0,
           left: 0,
-          width: 14,
-          height: 14,
-          borderRadius: "50%",
+          width: 2,
+          height: 2,
+          borderRadius: "100%",
           background:
             "radial-gradient(circle at 30% 30%, #f0f, #0ff 60%, #fff0 100%)",
           pointerEvents: "none",
@@ -61,18 +61,18 @@ const CustomCursor = () => {
           position: "fixed",
           top: 0,
           left: 0,
-          width: 60,
-          height: 60,
+          width: 100,
+          height: 100,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle at 40% 40%, #a855f7 0%, #06b6d4 60%, #fff0 100%)",
+            "radial-gradient(circle at 60% 60%, #a855f7 0%, #06b6d4 60%, #fff0 100%)",
           filter: "blur(18px)",
           opacity: 0.55,
           pointerEvents: "none",
           zIndex: 9998,
           transform: "translate3d(-100px, -100px, 0)",
           mixBlendMode: "plus-lighter",
-          transition: "background 0.2s",
+          transition: "background 0.1s",
         }}
       />
     </>

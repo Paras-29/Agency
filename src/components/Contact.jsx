@@ -18,26 +18,29 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "agency2922@gmail.com",
-      link: "mailto:agency2922@gmail.com"
+      link: "mailto:agency2922@gmail.com",
+      color: "bg-red-500"
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+919460224643",
-      link: "tel:+919460224643"
+      link: "tel:+919460224643",
+      color: "bg-red-100"
     },
     {
       icon: MapPin,
       title: "Location",
       value: "jaipur, India",
-      link: "#"
+      link: "#",
+      color: "bg-blue-400"
     }
   ]
 
   // ✅ Only Instagram & LinkedIn kept
   const socialLinks = [
-    { name: "LinkedIn", url: "#", icon: Linkedin, color: "hover:text-blue-600" },
-    { name: "Instagram", url: "#", icon: Instagram, color: "hover:text-pink-600" }
+    { name: "LinkedIn", url: "#", icon: Linkedin, color: "bg-indigo-300" },
+    { name: "Instagram", url: "#", icon: Instagram, color: "bg-pink-500" }
   ]
 
   const handleInputChange = (e) => {
@@ -135,16 +138,16 @@ const Contact = () => {
             <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 ${info.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
                     <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-200 mb-1">
                       {info.title}
                     </h4>
                     <a
                       href={info.link}
-                      className="text-sm sm:text-base text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                      className="text-sm sm:text-base text-gray-400 hover:text-blue-600 transition-colors duration-300"
                     >
                       {info.value}
                     </a>
@@ -155,7 +158,7 @@ const Contact = () => {
 
             {/* ✅ Social Links with Icons */}
             <div>
-              <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-3 sm:mb-4">Follow Us</h4>
+              <h4 className="text-sm sm:text-base font-semibold text-gray-200 mb-3 sm:mb-4">Follow Us</h4>
               <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((social, index) => (
                   <a

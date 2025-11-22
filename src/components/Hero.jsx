@@ -196,7 +196,7 @@ const Hero = () => {
                         transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.05, y: -5 }}
-                        className="text-center p-4 sm:p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+                        className="text-center p-4 sm:p-6 bg-gray-300 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
                       >
                         {/* Background gradient on hover */}
                         <motion.div
