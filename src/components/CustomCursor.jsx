@@ -1,78 +1,103 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CustomCursor = () => {
-  const cursorRef = useRef(null);
-  const smokeRef = useRef(null);
+  const cursorDotRef = useRef(null);
+  const cursorRingRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
-    const smoke = smokeRef.current;
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let posX = mouseX;
-    let posY = mouseY;
+    const dot = cursorDotRef.current;
+    const ring = cursorRingRef.current;
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let ringX = 0;
+    let ringY = 0;
 
-    const moveCursor = (e) => {
+    const onMouseMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      setIsHidden(false);
+
+      if (dot) {
+        dot.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`;
+      }
     };
 
-    const animateSmoke = () => {
-      posX += (mouseX - posX) * 0.12;
-      posY += (mouseY - posY) * 0.12;
-      smoke.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
-      requestAnimationFrame(animateSmoke);
+    const animateRing = () => {
+      // Linear interpolation (lerp) for smooth lag effect
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+
+      if (ring) {
+        ring.style.transform = `translate3d(${ringX - 16}px, ${ringY - 16}px, 0)`;
+      }
+      requestAnimationFrame(animateRing);
     };
 
-    document.addEventListener("mousemove", moveCursor);
-    animateSmoke();
+    const onMouseLeave = () => {
+      setIsHidden(true);
+    };
+
+    const onMouseEnter = () => {
+      setIsHidden(false);
+    };
+
+    // Hover effect listeners
+    const addHoverListeners = () => {
+      const interactives = document.querySelectorAll("a, button, input, textarea, [role='button'], .portfolio-card, .service-card");
+      interactives.forEach((el) => {
+        el.addEventListener("mouseenter", () => setIsHovered(true));
+        el.addEventListener("mouseleave", () => setIsHovered(false));
+      });
+    };
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseleave", onMouseLeave);
+    document.addEventListener("mouseenter", onMouseEnter);
+    
+    const animationFrameId = requestAnimationFrame(animateRing);
+    
+    // Set up hover listeners and run them periodically in case DOM updates
+    addHoverListeners();
+    const interval = setInterval(addHoverListeners, 1000);
 
     return () => {
-      document.removeEventListener("mousemove", moveCursor);
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseleave", onMouseLeave);
+      document.removeEventListener("mouseenter", onMouseEnter);
+      cancelAnimationFrame(animationFrameId);
+      clearInterval(interval);
     };
   }, []);
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Inner Dot */}
       <div
-        ref={cursorRef}
+        ref={cursorDotRef}
+        className={`fixed top-0 left-0 w-1.5 h-1.5 rounded-full pointer-events-none z-[9999] transition-all duration-300 ${
+          isHidden ? "opacity-0 scale-0" : "opacity-100"
+        } ${isHovered ? "scale-0 bg-transparent" : "bg-[#2563EB]"}`}
         style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 2,
-          height: 2,
-          borderRadius: "100%",
-          background:
-            "radial-gradient(circle at 30% 30%, #f0f, #0ff 60%, #fff0 100%)",
-          pointerEvents: "none",
-          zIndex: 9999,
           transform: "translate3d(-100px, -100px, 0)",
-          boxShadow: "0 0 12px 4px #a855f7, 0 0 32px 16px #06b6d4",
-          mixBlendMode: "screen",
+          willChange: "transform",
         }}
       />
-      {/* Blurry smoke follower */}
+      {/* Outer Ring */}
       <div
-        ref={smokeRef}
+        ref={cursorRingRef}
+        className={`fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out border ${
+          isHidden ? "opacity-0 scale-0" : "opacity-100"
+        } ${
+          isHovered
+            ? "scale-150 bg-[#2563EB]/5 border-[#2563EB] dark:border-[#7C3AED]"
+            : "border-gray-400/50 dark:border-gray-600/50"
+        }`}
         style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 100,
-          height: 100,
-          borderRadius: "50%",
-          background:
-            "radial-gradient(circle at 60% 60%, #a855f7 0%, #06b6d4 60%, #fff0 100%)",
-          filter: "blur(18px)",
-          opacity: 0.55,
-          pointerEvents: "none",
-          zIndex: 9998,
           transform: "translate3d(-100px, -100px, 0)",
-          mixBlendMode: "plus-lighter",
-          transition: "background 0.1s",
+          willChange: "transform",
         }}
       />
     </>

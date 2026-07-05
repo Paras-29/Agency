@@ -1,200 +1,71 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Code, Globe, TrendingUp, Video, PenTool, Search, Sparkles } from 'lucide-react'
 
 const LoadingScreen = () => {
-  const icons = [Code, Globe, TrendingUp, Video, PenTool, Search]
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const duration = 2000 // 2 seconds
+    const intervalTime = 20
+    const steps = duration / intervalTime
+    let stepCount = 0
+
+    const timer = setInterval(() => {
+      stepCount++
+      const progress = Math.min(Math.round((stepCount / steps) * 100), 100)
+      setCount(progress)
+
+      if (stepCount >= steps) {
+        clearInterval(timer)
+      }
+    }, intervalTime)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-gray-600 via-black to-gray-600 flex items-center justify-center z-50 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.5, 1],
-            rotate: [0, 180, 360],
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-200 rounded-full opacity-30 blur-xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.5, 1, 1.5],
-            rotate: [360, 180, 0],
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-indigo-300 rounded-full opacity-30 blur-xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 90, 180],
-            x: [0, 60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/2 right-1/3 w-20 h-20 bg-purple-300 rounded-full opacity-30 blur-xl"
-        />
+    <div className="fixed inset-0 bg-[#FAFAFA] dark:bg-[#09090B] flex flex-col items-center justify-center z-50 overflow-hidden select-none">
+      {/* Subtle background decorative shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#2563EB]/5 to-[#7C3AED]/5 blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#06B6D4]/5 to-[#3B82F6]/5 blur-[120px]" />
       </div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
-
-      {/* Main content */}
-      <div className="relative z-10 text-center">
-        {/* Logo */}
+      {/* Main Content Container */}
+      <div className="relative z-10 flex flex-col items-center max-w-xs w-full px-6">
+        {/* Brand Logo - Minimal Text */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <motion.h1
-            animate={{ 
-              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="text-5xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-[length:200%_200%] bg-clip-text text-transparent"
-          >
-            Tekzyy
-          </motion.h1>
-        </motion.div>
-
-        {/* Loading animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="flex items-center justify-center space-x-2">
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, delay: 0 }}
-              className="w-3 h-3 bg-blue-600 rounded-full"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
-              className="w-3 h-3 bg-indigo-600 rounded-full"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
-              className="w-3 h-3 bg-purple-600 rounded-full"
-            />
-          </div>
+          <h1 className="text-3xl sm:text-4xl font-light tracking-[0.25em] text-[#111827] dark:text-[#FAFAFA]">
+            AUREVIA
+          </h1>
         </motion.div>
 
-        {/* Loading text */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-12"
-        >
-          <motion.p
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-xl text-gray-600 font-medium"
-          >
-            Loading amazing things...
-          </motion.p>
-        </motion.div>
-
-        {/* Floating icons */}
-        <div className="relative">
-          {icons.map((Icon, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0, rotate: 0 }}
-              animate={{ 
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-                rotate: [0, 360],
-                x: [0, (index % 2 === 0 ? 1 : -1) * 100],
-                y: [0, (index % 2 === 0 ? -1 : 1) * 60],
-              }}
-              transition={{
-                duration: 3,
-                delay: index * 0.3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <div className="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg flex items-center justify-center border border-gray-200/50">
-                <Icon className="w-6 h-6 text-blue-600" />
-              </div>
-            </motion.div>
-          ))}
+        {/* Minimal Progress Bar Wrapper */}
+        <div className="w-full bg-[#111827]/10 dark:bg-[#FAFAFA]/10 h-[1.5px] rounded-full overflow-hidden mb-4">
+          <motion.div
+            initial={{ width: "0%" }}
+            animate={{ width: `${count}%` }}
+            transition={{ ease: "easeInOut" }}
+            className="h-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED]"
+          />
         </div>
 
-        {/* Progress bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 1 }}
-          className="mt-16 max-w-md mx-auto"
-        >
-          <div className="bg-white/50 backdrop-blur-sm rounded-full h-2 border border-gray-200/50 overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 2, delay: 1.5, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full"
-            />
-          </div>
-        </motion.div>
-
-        {/* Sparkles effect */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 pointer-events-none"
-        >
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              animate={{
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
-              }}
-              transition={{
-                duration: 1,
-                delay: i * 0.20,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute"
-              style={{
-                left: `${50 + 40 * Math.cos(i * Math.PI / 4)}%`,
-                top: `${50 + 40 * Math.sin(i * Math.PI / 4)}%`,
-              }}
-            >
-              <Sparkles className="w-4 h-4 text-yellow-400" />
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Counter and Status */}
+        <div className="w-full flex justify-between items-center text-xs font-medium tracking-widest text-[#6B7280]">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            CREATING EXPERIENCE
+          </motion.span>
+          <span className="font-mono text-sm font-semibold">{count}%</span>
+        </div>
       </div>
     </div>
   )

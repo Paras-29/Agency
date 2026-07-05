@@ -1,258 +1,161 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, ArrowUp, Instagram , Linkedin } from 'lucide-react'
+import { ArrowUp, Instagram, Linkedin, Send } from 'lucide-react'
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const footerLinks = {
-    services: [
-      { name: 'Web Development', href: '#services' },
-      { name: 'WordPress Development', href: '#services' },
-      { name: 'Digital Marketing', href: '#services' },
-      { name: 'Video Editing', href: '#services' },
-      { name: 'Content Writing', href: '#services' },
-      { name: 'SEO Optimization', href: '#services' }
-    ],
-    company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#about' },
-      { name: 'Careers', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Press', href: '#' }
-    ],
-    support: [
-      { name: 'Help Center', href: '#' },
-      { name: 'Contact Support', href: '#contact' },
-      { name: 'Documentation', href: '#' },
-      { name: 'API Reference', href: '#' },
-      { name: 'Status', href: '#' }
-    ],
-    legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
-    ]
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80
+      const bodyRect = document.body.getBoundingClientRect().top
+      const elementRect = element.getBoundingClientRect().top
+      const elementPosition = elementRect - bodyRect
+      const offsetPosition = elementPosition - offset
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+    }
   }
 
-  
+  const quickLinks = [
+    { name: 'Home', id: 'home' },
+    { name: 'Services', id: 'services' },
+    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'About', id: 'about' },
+    { name: 'Process', id: 'process' },
+    { name: 'Testimonials', id: 'testimonials' },
+    { name: 'FAQ', id: 'faq' },
+    { name: 'Contact', id: 'contact' },
+  ]
+
+  const servicesLinks = [
+    { name: 'Website Development', id: 'services' },
+    { name: 'Web Applications', id: 'services' },
+    { name: 'AI Automation', id: 'services' },
+    { name: 'Digital Marketing', id: 'services' },
+    { name: 'SEO Optimization', id: 'services' },
+    { name: 'Brand Identity', id: 'services' }
+  ]
 
   return (
-    <footer className="bg-gradient-to-br from-gray-800 via-black to-gray-800 text-white relative overflow-hidden">
+    <footer className="bg-[#09090B] text-[#FAFAFA] border-t border-white/5 relative overflow-hidden">
       
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-12">
-          {/* Enhanced Company Info */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <motion.h3
-                whileHover={{ scale: 1.05 }}
-                className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-4 sm:mb-6"
-              >
-                Tekzyy
-              </motion.h3>
-              <p className="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-lg">
-                Transforming businesses through innovative digital solutions. We specialize in web development, digital marketing, and creative services that drive growth and success.
-              </p>
-              
-              {/* Enhanced Contact Info */}
-              <div className="gap-2 flex">
-  {[
-    { icon: Instagram, link: "#", color: "red" },   // Instagram -> red
-    { icon: Linkedin, link: "#", color: "blue" },   // LinkedIn -> blue
-  ].map((contact, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      whileHover={{ y: 10 }}
-      className="flex items-center space-x-0 group"
-    >
-      <a href={contact.link} target="_blank" rel="noopener noreferrer">
-<div
-        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors duration-300
-          ${contact.color === "red" ? "bg-red-600/20 group-hover:bg-red-600/40" : "bg-blue-600/20 group-hover:bg-blue-600/40"}
-        `}
-      >
-        <contact.icon
-          className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300
-            ${contact.color === "red" ? "text-red-400 group-hover:text-red-300" : "text-blue-400 group-hover:text-blue-300"}
-          `}
-          
-        />
-      </div>
-      </a>
-      
-     
-    </motion.div>
-  ))}
-</div>
+      {/* Decorative Blur */}
+      <div className="absolute bottom-[-20%] left-[-10%] w-[380px] h-[380px] bg-[#2563EB]/5 rounded-full blur-[100px] pointer-events-none" />
 
-            </motion.div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 relative z-10">
+        
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          
+          {/* Logo & Description (span-5) */}
+          <div className="md:col-span-5 flex flex-col justify-between">
+            <div>
+              <span className="text-xl sm:text-2xl font-light tracking-[0.2em] text-white mb-4 block">
+                AUREVIA
+              </span>
+              <p className="text-sm font-light text-gray-400 leading-relaxed max-w-sm mb-6">
+                A premium digital technology agency. We design and build modern software, AI platforms, and visual brands that drive digital authority.
+              </p>
+            </div>
+            
+            {/* Social Icons */}
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center text-gray-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center text-gray-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Enhanced Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Services</h4>
-            <ul className="space-y-0 sm:space-y-2">
-              {footerLinks.services.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300 text-xs sm:text-sm group flex items-center"
+          {/* Quick Links (span-2) */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">Agency</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link, i) => (
+                <li key={i}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-sm font-light text-gray-400 hover:text-white transition-colors duration-200"
                   >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     {link.name}
-                  </a>
-                </motion.li>
+                  </button>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Enhanced Company Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Company</h4>
-            <ul className="space-y-0 sm:space-y-2">
-              {footerLinks.company.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300 text-xs sm:text-sm group flex items-center"
+          {/* Services Links (span-2) */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">Capabilities</h4>
+            <ul className="space-y-3">
+              {servicesLinks.map((link, i) => (
+                <li key={i}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-sm font-light text-gray-400 hover:text-white transition-colors duration-200 text-left"
                   >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     {link.name}
-                  </a>
-                </motion.li>
+                  </button>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Enhanced Support Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Support</h4>
-            <ul className="space-y-0 sm:space-y-2">
-              {footerLinks.support.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300 text-xs sm:text-sm group flex items-center"
-                  >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* Newsletter Input (span-3) */}
+          <div className="md:col-span-3">
+            <h4 className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-6">Newsletter</h4>
+            <p className="text-xs text-gray-400 font-light mb-4">
+              Receive high-fidelity summaries and articles on technology updates.
+            </p>
+            <form onSubmit={(e) => e.preventDefault()} className="relative flex">
+              <input
+                type="email"
+                placeholder="email@example.com"
+                className="w-full bg-white/5 border border-white/10 rounded-[14px] px-4 py-3 text-xs text-white focus:outline-none focus:border-blue-400 transition-colors pr-10"
+              />
+              <button
+                type="submit"
+                className="absolute right-1 top-1 bottom-1 w-8 rounded-[10px] bg-white text-black flex items-center justify-center hover:opacity-90 transition-opacity"
+                aria-label="Subscribe"
+              >
+                <Send className="w-3.5 h-3.5" />
+              </button>
+            </form>
+          </div>
 
-          {/* Enhanced Legal Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-base sm:text-lg font-black mb-4 sm:mb-6 text-white">Legal</h4>
-            <ul className="space-y-0 sm:space-y-3">
-              {footerLinks.legal.map((link, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.05 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-all duration-300 text-xs sm:text-sm group flex items-center"
-                  >
-                    <span className="w-1 h-1 bg-blue-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
         </div>
 
-
-        {/* Enhanced Copyright */}
-       
-
-       
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          viewport={{ once: true }}
-          className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-700/50 w-full"
-        >
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
-            © 2024 TechVision Pro. All rights reserved.
+        {/* Bottom copyright block */}
+        <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs font-light text-gray-500 text-center sm:text-left">
+            &copy; 2026 Aurevia. All rights reserved. Handcrafted premium design.
           </p>
-          
-         
-          
-            {/* Enhanced Scroll to Top Button */}
-            <motion.button
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={scrollToTop}
-              className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white p-3 sm:p-4 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
-            >
-              <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 transition-transform duration-300" />
-            </motion.button>
-          </div>
-          
-        </motion.div>
-         </div>
+
+          {/* Scroll to Top */}
+          <motion.button
+            whileHover={{ scale: 1.1, y: -4 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-white cursor-pointer"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-4 h-4" />
+          </motion.button>
+        </div>
+
+      </div>
     </footer>
   )
 }
