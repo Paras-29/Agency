@@ -24,7 +24,7 @@ const LoadingScreen = () => {
   }, [])
 
   return (
-    <div className="fixed inset-0 bg-[#FAFAFA] dark:bg-[#09090B] flex flex-col items-center justify-center z-50 overflow-hidden select-none">
+    <div className="fixed inset-0 bg-[#E2E8F0] dark:bg-[#09090B] flex flex-col items-center justify-center z-50 overflow-hidden select-none">
       {/* Subtle background decorative shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-[#2563EB]/5 to-[#7C3AED]/5 blur-[120px]" />

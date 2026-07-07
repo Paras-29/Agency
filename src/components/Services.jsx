@@ -72,7 +72,7 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-24 bg-[#FAFAFA] dark:bg-[#09090B] relative overflow-hidden">
+    <section id="services" className="py-24 bg-[#E2E8F0] dark:bg-[#09090B] relative overflow-hidden">
       
       {/* Background Decorative Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-[#2563EB]/3 to-[#7C3AED]/3 rounded-full blur-[120px] pointer-events-none" />
@@ -109,7 +109,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#6B7280] dark:text-gray-400 text-base sm:text-lg font-light leading-relaxed"
+            className="text-[#1E293B] dark:text-gray-400 text-base sm:text-lg font-light leading-relaxed"
           >
             From design to launch, we offer specialized engineering and creative services to help businesses navigate the digital ecosystem.
           </motion.p>
@@ -129,13 +129,13 @@ const Services = () => {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="group bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-[280px] hover:border-gray-300 dark:hover:border-white/10"
+                className="group bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:group-hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-[280px] hover:border-gray-300/80 dark:hover:border-white/10"
               >
                 <div>
                   {/* Icon Wrapper with subtle gradient indicator */}
-                  <div className="relative w-12 h-12 rounded-[14px] bg-gray-50 dark:bg-white/[0.03] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative w-12 h-12 rounded-[14px] bg-slate-300/60 dark:bg-white/[0.03] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 border border-slate-400/30 dark:border-transparent">
                     <div className={`absolute -inset-[1px] rounded-[14px] bg-gradient-to-tr ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-[1px]`} />
-                    <IconComponent className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-[#111827] dark:group-hover:text-white transition-colors duration-300" />
+                    <IconComponent className="w-6 h-6 text-[#2563EB] dark:text-gray-300 group-hover:text-[#111827] dark:group-hover:text-white transition-colors duration-300" />
                   </div>
 
                   {/* Title */}
@@ -144,7 +144,7 @@ const Services = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm font-light leading-relaxed text-[#6B7280] dark:text-gray-400 group-hover:text-[#111827] dark:group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-sm font-light leading-relaxed text-slate-800 dark:text-gray-400 group-hover:text-[#111827] dark:group-hover:text-gray-200 transition-colors duration-300">
                     {service.description}
                   </p>
                 </div>

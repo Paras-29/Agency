@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
   }
 
   return (
-    <section id="why-choose-us" className="py-24 bg-[#F3F4F6] dark:bg-[#121214] relative overflow-hidden">
+    <section id="why-choose-us" className="py-24 bg-[#CBD5E1] dark:bg-[#121214] relative overflow-hidden">
       
       {/* Decorative background gradients */}
       <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] bg-gradient-to-tr from-[#2563EB]/4 to-transparent rounded-full blur-[80px] pointer-events-none" />
@@ -66,19 +66,19 @@ const WhyChooseUs = () => {
           {/* Quality Card (col-span-2) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="md:col-span-2 bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
             <div className="flex items-start justify-between">
-              <div className="w-12 h-12 rounded-[14px] bg-blue-50 dark:bg-white/[0.03] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-[14px] bg-blue-50 dark:bg-white/[0.03] flex items-center justify-center border border-blue-100/50 dark:border-transparent">
                 <Award className="w-6 h-6 text-[#2563EB]" />
               </div>
-              <span className="text-[11px] font-mono tracking-wider text-gray-400 uppercase">Meticulous Craft</span>
+              <span className="text-[11px] font-mono tracking-wider text-slate-700 dark:text-gray-500 uppercase">Meticulous Craft</span>
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Uncompromising Quality
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed max-w-xl">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed max-w-xl">
                 We believe in digital products that feel handcrafted. Every layout pixel is aligned, code is documented, and components are custom-built to reflect premium brand aesthetics.
               </p>
             </div>
@@ -87,10 +87,10 @@ const WhyChooseUs = () => {
           {/* Performance Card (col-span-1) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-1 bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="md:col-span-1 bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
             <div className="flex items-start justify-between">
-              <div className="w-12 h-12 rounded-[14px] bg-green-50 dark:bg-white/[0.03] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-[14px] bg-green-50 dark:bg-white/[0.03] flex items-center justify-center border border-green-100/50 dark:border-transparent">
                 <Zap className="w-6 h-6 text-green-500" />
               </div>
               
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Extreme Speed
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 Buttery smooth scrolling, minimal bundle sizes, and lazy load features make pages load instantly.
               </p>
             </div>
@@ -113,16 +113,16 @@ const WhyChooseUs = () => {
           {/* Security Card (col-span-1) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-1 bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="md:col-span-1 bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
-            <div className="w-12 h-12 rounded-[14px] bg-red-50 dark:bg-white/[0.03] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-[14px] bg-red-50 dark:bg-white/[0.03] flex items-center justify-center border border-red-100/50 dark:border-transparent">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Enterprise Security
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 Secure API routing, HTTPS protection, and automated patch routines protect your user database.
               </p>
             </div>
@@ -131,16 +131,16 @@ const WhyChooseUs = () => {
           {/* Tech Stack Card (col-span-2) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="md:col-span-2 bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
             <div className="flex items-start justify-between">
-              <div className="w-12 h-12 rounded-[14px] bg-purple-50 dark:bg-white/[0.03] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-[14px] bg-purple-50 dark:bg-white/[0.03] flex items-center justify-center border border-purple-100/50 dark:border-transparent">
                 <Layers className="w-6 h-6 text-[#7C3AED]" />
               </div>
               {/* Micro tag list */}
               <div className="flex flex-wrap gap-1.5 max-w-[200px] justify-end">
                 {['React', 'Vite', 'Lenis', 'Framer Motion'].map((tech) => (
-                  <span key={tech} className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/5 font-mono text-gray-500">{tech}</span>
+                  <span key={tech} className="text-[10px] px-2 py-0.5 rounded-full bg-slate-300/70 dark:bg-white/5 font-mono text-slate-800 dark:text-gray-400 border border-slate-400/20 dark:border-white/5">{tech}</span>
                 ))}
               </div>
             </div>
@@ -148,7 +148,7 @@ const WhyChooseUs = () => {
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Modern Tech Stack
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 We develop using premium libraries: React, Vite, Tailwind CSS, Lenis smooth scrolling, and Framer Motion. This guarantees modular code that remains easily maintainable as you grow.
               </p>
             </div>
@@ -157,16 +157,16 @@ const WhyChooseUs = () => {
           {/* Delivery Card */}
           <motion.div
             variants={itemVariants}
-            className="bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
-            <div className="w-12 h-12 rounded-[14px] bg-yellow-50 dark:bg-white/[0.03] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-[14px] bg-yellow-50 dark:bg-white/[0.03] flex items-center justify-center border border-yellow-100/50 dark:border-transparent">
               <Calendar className="w-6 h-6 text-yellow-500" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Agile Delivery
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 Iterative sprint schedules and prompt deliverables ensure projects launch on time, without delays.
               </p>
             </div>
@@ -175,16 +175,16 @@ const WhyChooseUs = () => {
           {/* Communication Card */}
           <motion.div
             variants={itemVariants}
-            className="bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
-            <div className="w-12 h-12 rounded-[14px] bg-indigo-50 dark:bg-white/[0.03] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-[14px] bg-indigo-50 dark:bg-white/[0.03] flex items-center justify-center border border-indigo-100/50 dark:border-transparent">
               <MessageSquare className="w-6 h-6 text-indigo-500" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Transparent Comms
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 Shared communication channels and structured update summaries eliminate uncertainty.
               </p>
             </div>
@@ -193,16 +193,16 @@ const WhyChooseUs = () => {
           {/* Support Card */}
           <motion.div
             variants={itemVariants}
-            className="bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px]"
+            className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-[260px] hover:border-gray-300/80 dark:hover:border-white/10"
           >
-            <div className="w-12 h-12 rounded-[14px] bg-cyan-50 dark:bg-white/[0.03] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-[14px] bg-cyan-50 dark:bg-white/[0.03] flex items-center justify-center border border-cyan-100/50 dark:border-transparent">
               <HeartHandshake className="w-6 h-6 text-cyan-500" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                 Long-Term Support
               </h3>
-              <p className="text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+              <p className="text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                 We remain partners post-launch, updating systems and optimizing UX as your product matures.
               </p>
             </div>

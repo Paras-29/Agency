@@ -20,9 +20,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'light'
+      return localStorage.getItem('theme') || 'dark'
     }
-    return 'light'
+    return 'dark'
   })
 
   useEffect(() => {
@@ -105,7 +105,7 @@ function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="min-h-screen transition-colors duration-300 bg-[#FAFAFA] dark:bg-[#09090B] text-[#111827] dark:text-[#FAFAFA]"
+          className="min-h-screen transition-colors duration-300 bg-[#E2E8F0] dark:bg-[#09090B] text-[#111827] dark:text-[#FAFAFA]"
         >
           <CustomCursor />
           <Navbar theme={theme} toggleTheme={toggleTheme} />

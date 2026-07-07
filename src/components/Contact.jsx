@@ -80,7 +80,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#FAFAFA] dark:bg-[#09090B] relative overflow-hidden">
+    <section id="contact" className="py-24 bg-[#E2E8F0] dark:bg-[#09090B] relative overflow-hidden">
       
       {/* Decorative Accent */}
       <div className="absolute top-[20%] left-[-15%] w-[450px] h-[450px] bg-gradient-to-tr from-[#2563EB]/4 to-[#7C3AED]/4 rounded-full blur-[100px] pointer-events-none" />
@@ -124,7 +124,7 @@ const Contact = () => {
             className="lg:col-span-5 flex flex-col justify-between"
           >
             <div className="space-y-10">
-              <p className="text-base sm:text-lg font-light text-[#6B7280] dark:text-gray-400 leading-relaxed max-w-md">
+               <p className="text-base sm:text-lg font-light text-slate-800 dark:text-gray-400 leading-relaxed max-w-md">
                 Have a concept in mind, need technical reinforcement, or looking to redesign a product? Reach out and we will respond within 24 hours.
               </p>
 
@@ -134,11 +134,11 @@ const Contact = () => {
                   const IconComp = info.icon
                   return (
                     <div key={index} className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-[10px] bg-gray-100 dark:bg-white/[0.02] flex items-center justify-center text-gray-500 border border-gray-200/20 dark:border-white/5 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-[10px] bg-slate-300/60 dark:bg-white/[0.02] flex items-center justify-center text-slate-800 dark:text-gray-500 border border-gray-200/40 dark:border-white/5 flex-shrink-0">
                         <IconComp className="w-5 h-5" />
                       </div>
                       <div>
-                        <p className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mb-0.5">{info.title}</p>
+                         <p className="text-[10px] uppercase tracking-wider text-slate-800 dark:text-gray-400 font-semibold mb-0.5">{info.title}</p>
                         <a
                           href={info.link}
                           className="text-sm font-medium text-[#111827] dark:text-gray-200 hover:text-[#2563EB] dark:hover:text-blue-400 transition-colors"
@@ -154,7 +154,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="mt-12 lg:mt-0">
-              <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-4">Follow Aurevia</p>
+               <p className="text-xs uppercase tracking-wider text-slate-800 dark:text-gray-400 font-semibold mb-4">Follow Aurevia</p>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => {
                   const IconComp = social.icon
@@ -162,7 +162,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.url}
-                      className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-[#111827] dark:hover:text-white hover:border-[#111827] dark:hover:border-white/20 transition-all flex items-center justify-center"
+                      className="w-10 h-10 rounded-full border border-gray-200/60 dark:border-white/10 text-slate-800 dark:text-gray-400 hover:text-[#111827] dark:hover:text-white hover:border-gray-400 dark:hover:border-white/20 hover:bg-gray-50 dark:hover:bg-transparent transition-all flex items-center justify-center"
                       aria-label={social.name}
                     >
                       <IconComp className="w-[18px] h-[18px]" />
@@ -182,7 +182,7 @@ const Contact = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <div className="bg-white dark:bg-[#18181B] border border-gray-200/50 dark:border-white/5 shadow-premium rounded-[20px] p-8">
+            <div className="bg-slate-100/90 dark:bg-[#18181B] border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium rounded-[20px] p-8">
               <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-6">
                 Send a Message
               </h3>
@@ -209,7 +209,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                    <label htmlFor="name" className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase tracking-wider mb-2">
                       Full Name *
                     </label>
                     <input
@@ -219,13 +219,13 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm"
+                      className="w-full bg-slate-100/80 dark:bg-black/20 border border-slate-300/80 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm placeholder-slate-500"
                       placeholder="e.g. John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                    <label htmlFor="email" className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase tracking-wider mb-2">
                       Email Address *
                     </label>
                     <input
@@ -235,14 +235,14 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm"
+                      className="w-full bg-slate-100/80 dark:bg-black/20 border border-slate-300/80 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm placeholder-slate-500"
                       placeholder="e.g. john@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                    <label htmlFor="subject" className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase tracking-wider mb-2">
                     Subject *
                   </label>
                   <input
@@ -252,13 +252,13 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm"
+                    className="w-full bg-slate-100/80 dark:bg-black/20 border border-slate-300/80 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm placeholder-slate-500"
                     placeholder="e.g. Custom Web Development"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
+                    <label htmlFor="message" className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase tracking-wider mb-2">
                     Project details *
                   </label>
                   <textarea
@@ -268,7 +268,7 @@ const Contact = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm resize-none"
+                    className="w-full bg-slate-100/80 dark:bg-black/20 border border-slate-300/80 dark:border-white/5 rounded-[14px] px-4 py-3.5 focus:border-[#2563EB] dark:focus:border-blue-400 focus:ring-[4px] focus:ring-[#2563EB]/10 transition-all text-[#111827] dark:text-[#FAFAFA] text-sm resize-none placeholder-slate-500"
                     placeholder="Describe your system requirements and timelines..."
                   />
                 </div>

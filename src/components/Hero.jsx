@@ -24,7 +24,7 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 flex flex-col justify-between overflow-hidden bg-[#FAFAFA] dark:bg-[#09090B]">
+    <section id="home" className="relative min-h-screen pt-28 pb-16 flex flex-col justify-between overflow-hidden bg-[#E2E8F0] dark:bg-[#09090B]">
       
       {/* Decorative Blur Accents */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -42,7 +42,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-xs font-semibold tracking-wider text-gray-600 dark:text-gray-300 mb-6 self-start"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-300/50 dark:bg-white/5 border border-gray-200/50 dark:border-white/10 text-xs font-semibold tracking-wider text-slate-900 dark:text-gray-300 mb-6 self-start"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse"></span>
               PREMIUM DIGITAL EXPERIENCE
@@ -65,7 +65,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-base sm:text-lg md:text-xl text-[#6B7280] dark:text-gray-400 font-light leading-relaxed max-w-xl mb-8"
+              className="text-base sm:text-lg md:text-xl text-slate-800 dark:text-gray-400 font-light leading-relaxed max-w-xl mb-8"
             >
               We are Aurevia—a high-end technology agency partnering with forward-thinking businesses to craft modern software, AI platforms, and visual brands.
             </motion.p>
@@ -99,7 +99,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-6 text-sm text-[#6B7280] dark:text-gray-400 border-t border-gray-200/50 dark:border-white/5 pt-6"
+              className="flex flex-wrap items-center gap-6 text-sm text-slate-800 dark:text-gray-400 border-t border-gray-200/50 dark:border-white/5 pt-6"
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-500" />
@@ -125,21 +125,21 @@ const Hero = () => {
               className="relative w-full max-w-[400px] h-[400px] md:h-[450px]"
             >
               {/* Primary mockup element: Minimalist dashboard wrapper */}
-              <div className="absolute top-10 left-0 right-0 h-[280px] bg-white dark:bg-[#18181B] rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-200/40 dark:border-white/10 p-5 z-10 flex flex-col justify-between">
+              <div className="absolute top-10 left-0 right-0 h-[280px] bg-slate-200/90 dark:bg-[#18181B] rounded-[20px] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-300/40 dark:border-white/10 p-5 z-10 flex flex-col justify-between">
                 <div className="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-white/5">
                   <div className="flex space-x-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
                     <span className="w-2.5 h-2.5 rounded-full bg-green-400"></span>
                   </div>
-                  <span className="text-[10px] font-mono tracking-wider text-gray-400">aurevia.platform</span>
+                  <span className="text-[10px] font-mono tracking-wider text-slate-600 dark:text-gray-400">aurevia.platform</span>
                 </div>
                 
                 {/* Simulated Chart/Analytics */}
                 <div className="flex-grow flex flex-col justify-end gap-2 pt-4">
                   <div className="flex justify-between items-end h-[100px] gap-2">
                     {[30, 45, 35, 60, 50, 75, 90, 80].map((h, i) => (
-                      <div key={i} className="flex-grow bg-gray-100 dark:bg-white/5 rounded-t-[4px] relative overflow-hidden h-full">
+                      <div key={i} className="flex-grow bg-slate-300/60 dark:bg-white/5 rounded-t-[4px] relative overflow-hidden h-full">
                         <motion.div
                           initial={{ height: 0 }}
                           animate={{ height: `${h}%` }}
@@ -149,7 +149,7 @@ const Hero = () => {
                       </div>
                     ))}
                   </div>
-                  <div className="flex justify-between text-[10px] font-mono text-gray-400 pt-1">
+                  <div className="flex justify-between text-[10px] font-mono text-slate-600 dark:text-gray-400 pt-1">
                     <span>Q1</span>
                     <span>Q2</span>
                     <span>Q3</span>
@@ -162,13 +162,13 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 right-[-10px] bg-white/80 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-4 shadow-lg z-20 flex items-center gap-3"
+                className="absolute top-0 right-[-10px] bg-slate-300/90 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-4 shadow-lg z-20 flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-full bg-blue-50 dark:bg-white/5 flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-[#2563EB]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">conversion</p>
+                  <p className="text-[10px] text-slate-600 dark:text-gray-400 uppercase tracking-widest font-semibold">conversion</p>
                   <p className="text-base font-bold text-[#111827] dark:text-[#FAFAFA]">+142.8%</p>
                 </div>
               </motion.div>
@@ -177,13 +177,13 @@ const Hero = () => {
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-4 left-[-15px] bg-white/80 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-4 shadow-lg z-20 flex items-center gap-3"
+                className="absolute bottom-4 left-[-15px] bg-slate-300/90 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-4 shadow-lg z-20 flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-full bg-purple-50 dark:bg-white/5 flex items-center justify-center">
                   <Cpu className="w-5 h-5 text-[#7C3AED]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">AI Integration</p>
+                  <p className="text-[10px] text-slate-600 dark:text-gray-400 uppercase tracking-widest font-semibold">AI Integration</p>
                   <p className="text-base font-bold text-[#111827] dark:text-[#FAFAFA]">Active & Optimized</p>
                 </div>
               </motion.div>
@@ -192,7 +192,7 @@ const Hero = () => {
               <motion.div
                 animate={{ x: [0, 8, 0], y: [0, -6, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-16 right-[-20px] bg-white/80 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-3 shadow-lg z-20 flex items-center justify-center"
+                className="absolute bottom-16 right-[-20px] bg-slate-300/90 dark:bg-[#18181B]/80 backdrop-blur-md rounded-[16px] border border-gray-200/50 dark:border-white/10 p-3 shadow-lg z-20 flex items-center justify-center"
               >
                 <ShieldCheck className="w-5 h-5 text-[#06B6D4] mr-2" />
                 <span className="text-xs font-semibold text-[#111827] dark:text-[#FAFAFA]">Enterprise Grade</span>
@@ -206,8 +206,8 @@ const Hero = () => {
       {/* Endless Client Logos Marquee */}
       <div className="w-full border-t border-b border-gray-200/50 dark:border-white/5 py-8 mt-16 bg-gray-50/50 dark:bg-white/[0.01]">
         <div className="max-w-7xl mx-auto px-6 overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#FAFAFA] dark:from-[#09090B] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#FAFAFA] dark:from-[#09090B] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#E2E8F0] dark:from-[#09090B] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#E2E8F0] dark:from-[#09090B] to-transparent z-10 pointer-events-none" />
           
           <div className="flex w-[200%] animate-ticker">
             {/* First Set of Logos */}

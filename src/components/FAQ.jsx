@@ -33,7 +33,7 @@ const FAQ = () => {
   }
 
   return (
-    <section id="faq" className="py-24 bg-[#F3F4F6] dark:bg-[#121214] relative overflow-hidden">
+    <section id="faq" className="py-24 bg-[#CBD5E1] dark:bg-[#121214] relative overflow-hidden">
       
       {/* Decorative Blur */}
       <div className="absolute bottom-[-10%] right-[-10%] w-[380px] h-[380px] bg-gradient-to-tr from-[#2563EB]/3 to-transparent rounded-full blur-[90px] pointer-events-none" />
@@ -74,7 +74,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white dark:bg-[#18181B] rounded-[20px] border border-gray-200/50 dark:border-white/5 overflow-hidden shadow-premium"
+                className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] border border-gray-200/60 dark:border-white/5 overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:border-gray-300/80 dark:hover:border-white/10 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -83,7 +83,7 @@ const FAQ = () => {
                   <span className="text-base sm:text-lg font-bold text-[#111827] dark:text-[#FAFAFA] pr-4">
                     {faq.question}
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/[0.03] flex items-center justify-center flex-shrink-0 text-gray-500">
+                  <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-white/[0.03] flex items-center justify-center flex-shrink-0 text-slate-800 border border-gray-200/50 dark:border-transparent">
                     {isOpen ? (
                       <Minus className="w-4 h-4 text-[#2563EB]" />
                     ) : (
@@ -100,7 +100,7 @@ const FAQ = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div className="px-6 pb-6 pt-2 text-sm sm:text-base font-light leading-relaxed text-[#6B7280] dark:text-gray-400 border-t border-gray-100 dark:border-white/5">
+                      <div className="px-6 pb-6 pt-2 text-sm sm:text-base font-light leading-relaxed text-slate-800 dark:text-gray-400 border-t border-gray-200/40 dark:border-white/5">
                         {faq.answer}
                       </div>
                     </motion.div>

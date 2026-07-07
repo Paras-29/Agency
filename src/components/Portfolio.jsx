@@ -96,7 +96,7 @@ const Portfolio = () => {
     : projects.filter(p => p.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-24 bg-[#FAFAFA] dark:bg-[#09090B] relative overflow-hidden">
+    <section id="portfolio" className="py-24 bg-[#E2E8F0] dark:bg-[#09090B] relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
@@ -127,14 +127,14 @@ const Portfolio = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center gap-3 mb-12 border-b border-gray-200/50 dark:border-white/5 pb-6">
+        <div className="flex flex-wrap items-center gap-3 mb-12 border-b border-gray-200/60 dark:border-white/5 pb-6">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-300 ${selectedCategory === category.id
                   ? 'bg-[#111827] dark:bg-[#FAFAFA] text-[#FAFAFA] dark:text-[#111827] shadow-sm'
-                  : 'text-[#6B7280] dark:text-gray-400 hover:text-[#111827] dark:hover:text-white'
+                  : 'text-slate-800 dark:text-gray-400 hover:text-[#111827] dark:hover:text-white'
                 }`}
             >
               {category.name}
@@ -156,10 +156,10 @@ const Portfolio = () => {
             >
 
               {/* Premium CSS-based Browser Mockup */}
-              <div className="relative rounded-[20px] overflow-hidden bg-gray-100 dark:bg-white/[0.02] border border-gray-200/40 dark:border-white/5 shadow-premium mb-6">
+              <div className="relative rounded-[20px] overflow-hidden bg-slate-300/40 dark:bg-white/[0.02] border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium mb-6">
 
                 {/* Browser Header Bar */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200/40 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.01]">
+                <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200/60 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.01]">
                   <div className="flex space-x-1.5">
                     <span className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-700"></span>
                     <span className="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-700"></span>
@@ -214,7 +214,7 @@ const Portfolio = () => {
                   </button>
                 </div>
 
-                <p className="text-sm font-light leading-relaxed text-[#6B7280] dark:text-gray-400 mb-4 max-w-xl">
+                <p className="text-sm font-light leading-relaxed text-slate-800 dark:text-gray-400 mb-4 max-w-xl">
                   {project.description}
                 </p>
 
@@ -223,7 +223,7 @@ const Portfolio = () => {
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-0.5 bg-gray-100 dark:bg-white/[0.04] text-gray-600 dark:text-gray-400 text-xs font-mono rounded-full border border-gray-200/20 dark:border-white/5"
+                      className="px-2.5 py-0.5 bg-slate-300/70 dark:bg-white/[0.04] text-slate-900 dark:text-gray-400 text-xs font-mono rounded-full border border-gray-200/40 dark:border-white/5"
                     >
                       {tech}
                     </span>
@@ -250,7 +250,7 @@ const Portfolio = () => {
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.95, y: 15 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white dark:bg-[#18181B] rounded-[20px] max-w-2xl w-full border border-gray-200/50 dark:border-white/10 overflow-hidden shadow-2xl"
+                className="bg-slate-200 dark:bg-[#18181B] rounded-[20px] max-w-2xl w-full border border-gray-200/50 dark:border-white/10 overflow-hidden shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal Header */}
@@ -276,7 +276,7 @@ const Portfolio = () => {
                     />
                   </div>
 
-                  <p className="text-sm font-light leading-relaxed text-[#6B7280] dark:text-gray-400 mb-6">
+                  <p className="text-sm font-light leading-relaxed text-[#4B5563] dark:text-[#9CA3AF] mb-6">
                     {selectedProject.description}
                   </p>
 
@@ -285,7 +285,7 @@ const Portfolio = () => {
                     {selectedProject.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-1 bg-gray-100 dark:bg-white/[0.04] text-gray-700 dark:text-gray-300 text-xs font-mono rounded-full border border-gray-200/30 dark:border-white/5"
+                        className="px-2.5 py-1 bg-slate-300/70 dark:bg-white/[0.04] text-slate-900 dark:text-gray-300 text-xs font-mono rounded-full border border-gray-200/30 dark:border-white/5"
                       >
                         {tech}
                       </span>

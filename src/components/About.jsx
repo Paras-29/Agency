@@ -25,8 +25,27 @@ const About = () => {
     }
   ]
 
+  const founders = [
+    {
+      name: "Mayank",
+      role: "Founder",
+      badge: "FOUNDER",
+      badgeColor: "bg-[#2563EB]",
+      image: "./mayank.jpeg",
+      quote: "\"Building the future of digital experiences with innovation, precision, and a relentless pursuit of excellence.\"",
+    },
+    {
+      name: "Ankita",
+      role: "Co-Founder",
+      badge: "CO-FOUNDER",
+      badgeColor: "bg-[#7C3AED]",
+      image: "./ankita.jpeg",
+      quote: "\"Empowering brands through creative vision, strategic thinking, and meaningful digital connections.\"",
+    }
+  ]
+
   return (
-    <section id="about" className="py-24 bg-[#FAFAFA] dark:bg-[#09090B] relative overflow-hidden">
+    <section id="about" className="py-24 bg-[#E2E8F0] dark:bg-[#09090B] relative overflow-hidden">
 
       {/* Decorative Blur */}
       <div className="absolute top-[30%] left-[-15%] w-[400px] h-[400px] bg-gradient-to-tr from-[#2563EB]/4 to-[#7C3AED]/4 rounded-full blur-[100px] pointer-events-none" />
@@ -59,8 +78,8 @@ const About = () => {
           </motion.h2>
         </div>
 
-        {/* Main Content: Founder & Bio */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+        {/* Main Content: Bio Text + Founders */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
 
           {/* Bio Text */}
           <motion.div
@@ -68,7 +87,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-6 text-[#6B7280] dark:text-gray-400 text-base sm:text-lg font-light leading-relaxed pr-0 lg:pr-8"
+            className="lg:col-span-5 space-y-6 text-slate-800 dark:text-gray-400 text-base sm:text-lg font-light leading-relaxed"
           >
             <p>
               Founded with the conviction that digital experiences should be designed for maximum aesthetic value and high performance, Aurevia exists to bridge the gap between handcrafted designs and reliable engineering.
@@ -81,36 +100,49 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* Founder Profile Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex flex-col items-center bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium text-center"
-          >
-            <div className="relative mb-6">
-              <img
-                src="./photo.jpeg"
-                alt="Founder & CEO"
-                className="w-40 h-40 sm:w-48 sm:h-48 object-cover rounded-full border border-gray-200 dark:border-white/10 shadow-sm"
-              />
-              <span className="absolute bottom-2 right-2 bg-[#2563EB] text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase shadow-md">
-                CEO
-              </span>
-            </div>
+          {/* Founder & Co-Founder Cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {founders.map((founder, index) => (
+              <motion.div
+                key={founder.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="group flex flex-col items-center bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium text-center hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-500 hover:border-gray-300/80 dark:hover:border-white/10"
+              >
+                {/* Photo with Role Badge */}
+                <div className="relative mb-6">
+                  <div className="relative">
+                    <img
+                      src={founder.image}
+                      alt={`${founder.name} - ${founder.role}`}
+                      className="w-36 h-36 sm:w-40 sm:h-40 object-cover object-top
+                       rounded-full border-2 border-slate-300 dark:border-white/10 shadow-sm group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                    {/* Subtle gradient ring on hover */}
+                    <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#2563EB]/20 to-[#7C3AED]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm" />
+                  </div>
+                  <span className={`absolute bottom-1 right-1 ${founder.badgeColor} text-white px-3 py-1 rounded-full text-[9px] font-bold tracking-wider uppercase shadow-md`}>
+                    {founder.badge}
+                  </span>
+                </div>
 
-            <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-1">
-              Paras Gulvanshi
-            </h3>
-            <p className="text-xs text-[#6B7280] dark:text-gray-400 uppercase tracking-widest font-semibold mb-4">
-              Founder & Chief Executive
-            </p>
+                {/* Name & Title */}
+                <h3 className="text-xl font-bold text-[#111827] dark:text-[#FAFAFA] mb-1">
+                  {founder.name}
+                </h3>
+                <p className="text-xs text-slate-800 dark:text-gray-400 uppercase tracking-widest font-semibold mb-5">
+                  {founder.role}
+                </p>
 
-            <blockquote className="italic text-sm text-gray-500 dark:text-gray-400 max-w-sm">
-              "Empowering businesses to achieve more through innovation, clean engineering, and creative passion."
-            </blockquote>
-          </motion.div>
+                {/* Quote */}
+                <blockquote className="italic text-sm text-slate-800 dark:text-gray-400 leading-relaxed max-w-[260px]">
+                  {founder.quote}
+                </blockquote>
+              </motion.div>
+            ))}
+          </div>
 
         </div>
 
@@ -125,9 +157,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="bg-white dark:bg-[#18181B] rounded-[20px] p-6 border border-gray-200/40 dark:border-white/5 shadow-premium"
+                className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-6 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 hover:border-gray-300/80 dark:hover:border-white/10"
               >
-                <div className="w-10 h-10 rounded-[10px] bg-gray-50 dark:bg-white/[0.02] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-[10px] bg-slate-300/60 dark:bg-white/[0.02] flex items-center justify-center mb-4 border border-slate-400/30 dark:border-transparent">
                   <IconComp className="w-5 h-5 text-[#2563EB]" />
                 </div>
 
@@ -135,7 +167,7 @@ const About = () => {
                   {val.title}
                 </h4>
 
-                <p className="text-xs sm:text-sm font-light text-[#6B7280] dark:text-gray-400 leading-relaxed">
+                <p className="text-xs sm:text-sm font-light text-slate-800 dark:text-gray-400 leading-relaxed">
                   {val.description}
                 </p>
               </motion.div>

@@ -50,7 +50,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? 'py-4 bg-[#FAFAFA]/75 dark:bg-[#09090B]/75 backdrop-blur-md border-b border-gray-200/40 dark:border-white/5 shadow-sm'
+          ? 'py-4 bg-[#E2E8F0]/75 dark:bg-[#09090B]/75 backdrop-blur-md border-b border-gray-200/40 dark:border-white/5 shadow-sm'
           : 'py-6 bg-transparent'
       }`}
     >
@@ -74,7 +74,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium tracking-wide text-[#6B7280] dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-colors duration-200 relative py-1"
+                className="text-sm font-medium tracking-wide text-slate-800 dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-colors duration-200 relative py-1"
               >
                 {item.name}
               </button>
@@ -86,7 +86,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             {/* Theme Toggle Button */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full border border-gray-200/60 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/5 text-[#6B7280] dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-all duration-200 cursor-pointer"
+              className="p-2.5 rounded-full border border-gray-200/60 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/5 text-slate-800 dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-all duration-200 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle theme"
@@ -115,7 +115,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             {/* Mobile Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-gray-200/60 dark:border-white/10 text-[#6B7280] dark:text-[#FAFAFA]/70"
+              className="p-2 rounded-full border border-gray-200/60 dark:border-white/10 text-slate-800 dark:text-[#FAFAFA]/70"
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle theme"
             >
@@ -129,7 +129,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             {/* Hamburger Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-[#6B7280] dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] focus:outline-none"
+              className="p-2 rounded-lg text-slate-800 dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] focus:outline-none"
               aria-label="Toggle Menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -146,14 +146,14 @@ const Navbar = ({ theme, toggleTheme }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden bg-[#FAFAFA] dark:bg-[#09090B] border-b border-gray-200/40 dark:border-white/5 overflow-hidden"
+            className="lg:hidden bg-[#E2E8F0] dark:bg-[#09090B] border-b border-gray-200/40 dark:border-white/5 overflow-hidden"
           >
             <div className="px-6 pt-4 pb-8 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-2.5 text-base font-medium text-[#6B7280] dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-colors duration-200"
+                  className="block w-full text-left py-2.5 text-base font-medium text-slate-800 dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-colors duration-200"
                 >
                   {item.name}
                 </button>

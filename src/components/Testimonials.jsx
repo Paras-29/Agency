@@ -33,7 +33,7 @@ const Testimonials = () => {
   ]
 
   return (
-    <section id="testimonials" className="py-24 bg-[#FAFAFA] dark:bg-[#09090B] relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-[#E2E8F0] dark:bg-[#09090B] relative overflow-hidden">
       
       {/* Background decoration */}
       <div className="absolute top-[40%] right-[-10%] w-[380px] h-[380px] bg-gradient-to-tr from-[#2563EB]/3 to-transparent rounded-full blur-[90px] pointer-events-none" />
@@ -76,22 +76,22 @@ const Testimonials = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              className="bg-white dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/50 dark:border-white/5 shadow-premium hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              className="bg-slate-100/90 dark:bg-[#18181B] rounded-[20px] p-8 border border-gray-200/60 dark:border-white/5 shadow-[0_2px_20px_rgba(0,0,0,0.04)] dark:shadow-premium hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-lg transition-all duration-300 flex flex-col justify-between hover:border-gray-300/80 dark:hover:border-white/10"
             >
               <div>
                 {/* Quote Icon */}
-                <div className="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/[0.02] flex items-center justify-center mb-6">
+                <div className="w-8 h-8 rounded-full bg-blue-50/60 dark:bg-white/[0.02] flex items-center justify-center mb-6 border border-blue-100/30 dark:border-transparent">
                   <Quote className="w-4 h-4 text-[#2563EB] opacity-60" />
                 </div>
 
                 {/* Content */}
-                <p className="text-sm sm:text-base font-light leading-relaxed text-[#6B7280] dark:text-gray-400 italic mb-8">
+                <p className="text-sm sm:text-base font-light leading-relaxed text-slate-800 dark:text-gray-400 italic mb-8">
                   "{test.content}"
                 </p>
               </div>
 
               {/* Reviewer Meta */}
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-100 dark:border-white/5">
+              <div className="flex items-center gap-4 pt-6 border-t border-gray-200/60 dark:border-white/5">
                 <img
                   src={test.image}
                   alt={test.name}
@@ -101,7 +101,7 @@ const Testimonials = () => {
                   <h4 className="text-sm font-bold text-[#111827] dark:text-[#FAFAFA]">
                     {test.name}
                   </h4>
-                  <p className="text-[11px] font-mono tracking-wider text-gray-400 uppercase">
+                  <p className="text-[11px] font-mono tracking-wider text-slate-800 dark:text-gray-500 uppercase">
                     {test.position}, {test.company}
                   </p>
                   
