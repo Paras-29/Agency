@@ -19,11 +19,8 @@ import './App.css'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'dark'
-    }
-    return 'dark'
-  })
+  return localStorage.getItem('theme') || 'dark'
+})
 
   useEffect(() => {
     // Simulate loading time for premium agency experience

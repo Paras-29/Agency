@@ -8,6 +8,18 @@
     <meta name="keywords" content="website development, custom web applications, AI automation, branding, digital agency, UI/UX design, premium technology agency, SEO optimization" />
     <meta name="author" content="Aurevia" />
     <title>Aurevia | Premium Digital Agency</title>
+
+    <script>
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.style.colorScheme = 'light';
+    } else {
+      document.documentElement.classList.add('dark');
+      document.documentElement.style.colorScheme = 'dark';
+    }
+  </script>
   </head>
   <body>
     <div id="root"></div>
