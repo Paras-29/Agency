@@ -48,11 +48,10 @@ const Navbar = ({ theme, toggleTheme }) => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
           ? 'py-4 bg-[#E2E8F0]/75 dark:bg-[#09090B]/75 backdrop-blur-md border-b border-gray-200/40 dark:border-white/5 shadow-sm'
           : 'py-6 bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -84,7 +83,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           {/* Action Buttons: Toggle + CTA */}
           <div className="hidden md:flex items-center space-x-5">
             {/* Theme Toggle Button */}
-            <motion.button
+            {/* <motion.button
               onClick={toggleTheme}
               className="p-2.5 rounded-full border border-gray-200/60 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/5 text-slate-800 dark:text-[#FAFAFA]/70 hover:text-[#111827] dark:hover:text-[#FAFAFA] transition-all duration-200 cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -96,7 +95,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               ) : (
                 <Moon className="w-[18px] h-[18px]" />
               )}
-            </motion.button>
+            </motion.button> */}
 
             {/* Primary CTA */}
             <motion.button
@@ -113,7 +112,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           {/* Mobile menu toggle + Theme switch on mobile */}
           <div className="flex lg:hidden items-center space-x-3">
             {/* Mobile Theme Toggle */}
-            <motion.button
+            {/* <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-full border border-gray-200/60 dark:border-white/10 text-slate-800 dark:text-[#FAFAFA]/70"
               whileTap={{ scale: 0.95 }}
@@ -124,7 +123,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               ) : (
                 <Moon className="w-[18px] h-[18px]" />
               )}
-            </motion.button>
+            </motion.button> */}
 
             {/* Hamburger Button */}
             <button

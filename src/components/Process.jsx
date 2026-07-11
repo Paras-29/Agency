@@ -90,7 +90,7 @@ const Process = () => {
         </div>
 
         {/* Timeline Grid (Vertical layout) */}
-        <div className="relative max-w-5xl mx-auto pl-8 sm:pl-10 md:pl-12 border-l-2 border-slate-400 dark:border-white/10 space-y-12">
+        <div className="relative max-w-5xl mx-auto border-l-2 border-slate-400 dark:border-white/10 space-y-12">
           
           {steps.map((step, index) => {
             const IconComp = step.icon
@@ -101,7 +101,7 @@ const Process = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="relative group pl-8 sm:pl-12"
+                className="relative group pl-10 sm:pl-14 md:pl-16"
               >
                 <div className="absolute left-0 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-[#E2E8F0] dark:bg-[#09090B] border-2 border-slate-400 dark:border-white/20 group-hover:border-[#2563EB] dark:group-hover:border-blue-400 transition-colors duration-300 flex items-center justify-center z-10">
                   <div className="w-2 h-2 rounded-full bg-slate-500 dark:bg-gray-600 group-hover:bg-[#2563EB] dark:group-hover:bg-blue-400 transition-colors duration-300" />
